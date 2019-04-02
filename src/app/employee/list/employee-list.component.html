@@ -9,3 +9,20 @@
       Dodaj
     </a></li>
 </ul>
+<hr>
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Imie</td>
+      <td>Nazwisko</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeesList">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.surname }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,3 +1,4 @@
+import { EmployeesService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,23 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './employee-add.component.html'
 })
 export class EmployeeAddComponent implements OnInit {
-  constructor() { }
+
+  employee = {
+    name: '',
+    surname: ''
+  };
+  confirmed = false;
+
+  constructor(private employeesService: EmployeesService) { }
 
   ngOnInit(): void { }
+
+  save() {
+    this.employeesService.add(this.employee).subscribe(
+      (response) => {
+        console.log('ODostalem odpowiedz', response);
+        this.confirmed = true;
+      }
+    )
+  }
 }

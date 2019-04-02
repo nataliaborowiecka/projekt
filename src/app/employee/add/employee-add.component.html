@@ -1,1 +1,11 @@
 Dodaj pracownika
+<form>
+  <input type="text" placeholder="Imie" name="name" [(ngModel)]="employee.name">
+  <input type="text" placeholder="Nazwisko" name="surname" [(ngModel)]="employee.surname">
+  <button (click)="save()">Zapisz</button>
+</form>
+
+
+<p *ngIf="confirmed">
+  Poprawnie dodano uzyykwnika
+</p>
