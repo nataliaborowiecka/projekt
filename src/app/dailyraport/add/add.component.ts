@@ -5,7 +5,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dailyraport-add.component.html'
 })
 export class DailyraportAddComponent implements OnInit {
-  constructor() {}
+dailyraport = {
+  name: '',
+  date: ''
+};
+confirmed = false;
+  constructor(private dailyraportService: DailyraportService) {}
 
   ngOnInit(): void {}
+  save() {
+    this.dailyraportService.add(this.dailyraport).subscribe(
+      (reponse) => {
+        console.log('Dostałem odpowiedz', response);
+        this.confirmed - true;
+      }
+    )
+  }
 }
