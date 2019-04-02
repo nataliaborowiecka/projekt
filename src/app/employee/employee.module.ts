@@ -7,12 +7,11 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     EmployeeAddComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+
   ],
-  imports: [CommonModule,
-    RouterModule
-  ],
+  imports: [CommonModule, RouterModule],
   exports: [],
-  providers: [],
+  providers: []
 })
 export class EmployeeModule {}
