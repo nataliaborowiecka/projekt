@@ -1,20 +1,20 @@
-<ul>
-  <li>
-    <a [routerLink]="['/employee']">
-      Pracownicy
-    </a>
-  </li>
-  <li>
-    <a [routerLink]="['/dailyraport']">
-      Raport dzienny
-    </a>
-  </li>
-  <li>Raport miesieczny</li>
-  <li>Wyloguj</li>
-</ul>
+<div class="body">
+  <div class="menu">
+    <mat-list role="list">
+      <mat-list-item role="listitem" [routerLink]="['/employee']">Pracownicy</mat-list-item>
+      <mat-list-item role="listitem" [routerLink]="['/dailyraport']">Raport dzienny</mat-list-item>
+      <mat-list-item role="listitem">Raport miesieczny</mat-list-item>
+      <mat-list-item role="listitem">Wyloguj</mat-list-item>
+    </mat-list>
+  </div>
+  <div class="content">
 
 <div>
-  <p>App module glowny component</p>
+    <p>App module glowny component</p>
+  </div>
+
+  <router-outlet></router-outlet>
+  </div>
 </div>
 
-<router-outlet></router-outlet>
+

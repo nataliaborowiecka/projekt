@@ -1,10 +1,11 @@
+import { MaterialModule } from './../material.module';
+import { EmployeesService } from './employee.service';
 import { HttpClient } from '@angular/common/http';
 import { EmployeeAddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
 import { EmployeeListComponent } from './list/list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EmployeesService } from './employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, RouterModule,
     HttpClientModule,
     FormsModule,
+    MaterialModule
  ],
   exports: [
   ],

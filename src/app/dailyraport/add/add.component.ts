@@ -1,3 +1,4 @@
+import { DailyRaportService } from './../dailyreport.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,15 +11,15 @@ dailyraport = {
   date: ''
 };
 confirmed = false;
-  constructor(private dailyraportService: DailyraportService) {}
+  constructor(private dailyraportService: DailyRaportService) {}
 
   ngOnInit(): void {}
   save() {
-    this.dailyraportService.add(this.dailyraport).subscribe(
-      (reponse) => {
-        console.log('Dostałem odpowiedz', response);
-        this.confirmed - true;
-      }
-    )
+    // this.dailyraportService.add(this.dailyraport).subscribe(
+    //   (reponse) => {
+    //     console.log('Dostałem odpowiedz', response);
+    //     this.confirmed = true;
+    //   }
+    // )
   }
 }
