@@ -24,5 +24,6 @@ export class EmployeeAddComponent implements OnInit {
         this.confirmed = true;
       }
     )
+
   }
 }

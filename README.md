@@ -32,3 +32,5 @@ CO ZROBIC:
 ==> Zainstaluj node.js
 1. git clone / link do githuba
 2. npm install
+3. npm run start / aplikacja
+4. npm run server / server
