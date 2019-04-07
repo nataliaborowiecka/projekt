@@ -1,4 +1,4 @@
-<ul>
+<mat-list role="list">
   <li>
     <a [routerLink]="['/employee/list']">
       Lista pracowników
@@ -8,7 +8,7 @@
     <a [routerLink]="['/employee/add']">
       Dodaj pracownika
     </a></li>
-</ul>
+</mat-list>
 <hr>
 <table>
   <thead>
@@ -23,7 +23,14 @@
       <td>{{ employee.id }}</td>
       <td>{{ employee.name }}</td>
       <td>{{ employee.surname }}</td>
-      <button class="button"></button>
+      <button class="delete">Usuń</button>
+      <!-- user view--> 
+      <!-- <div class="people-view">
+          <h2 class="name">{{people.first}}</h2>
+          <h2 class="name">{{people.last}}</h2>
+          <span class="title">{{people.title}}</span>
+          <span class="date">{{people.date}} </span> 
+        </div>  -->
     </tr>
   </tbody>
 </table>

@@ -34,3 +34,8 @@ CO ZROBIC:
 2. npm install
 3. npm run start / aplikacja
 4. npm run server / server
+
+bash terminal: 
+ctrl + shift + p 
+select default shell 
+git bash          useless
