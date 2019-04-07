@@ -1,6 +1,6 @@
-import { DailyraportAddComponent } from './add/add.component';
+import { DailyreportAddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
-import { DailyraportListComponent } from './list/list.component';
+import { DailyreportListComponent } from './list/list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -8,9 +8,9 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [DailyraportAddComponent, DailyraportListComponent],
+  declarations: [DailyreportAddComponent, DailyreportListComponent],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [],
   providers: []
 })
-export class DailyraportModule {}
+export class DailyreportModule {}

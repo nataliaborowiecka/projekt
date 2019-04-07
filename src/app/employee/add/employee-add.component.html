@@ -1,15 +1,28 @@
 Dodaj pracownika
-<form>
+<form #form="ngForm" novalidate>
   <mat-form-field class="example-full-width">
-    <input matInput type="text" placeholder="Imie" name="name" [(ngModel)]="employee.name">
+    <input matInput  #name="ngModel" type="text" placeholder="Imie" name="name" 
+     required [(ngModel)]="employee.name">
+     <div *ngIf="name.errors && (name.dirty || name.touched)">
+       <p *ngIf="name.errors.required">*Name is required</p>
+     </div>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput type="text" placeholder="Nazwisko" name="surname" [(ngModel)]="employee.surname">
+    <input matInput #surname="ngModel" type="text" placeholder="Nazwisko" name="surname" 
+    required [(ngModel)]="employee.surname">
+    <div *ngIf="surname.errors && (surname.dirty || surname.touched)">
+        <p *ngIf="surname.errors.required">*Surname is required</p>
+      </div>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="save()">Zapisz</button>
+  <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="save()">Zapisz</button>
 </form>
 
 
-<p *ngIf="confirmed">
-  Poprawnie dodano uzyykwnika
+<p id=conf *ngIf="confirmed">
+  Poprawnie dodano pracownika
 </p>
+
+<!-- form validation:
+  template items, "required", another div with ngIf, template whole form, disable button conditionally
+ -->
+

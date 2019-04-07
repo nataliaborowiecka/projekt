@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+ 
+
 @NgModule({
   declarations: [
     EmployeeAddComponent,
@@ -17,7 +19,8 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, RouterModule,
     HttpClientModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+   
  ],
   exports: [
   ],

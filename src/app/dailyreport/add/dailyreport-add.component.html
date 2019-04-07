@@ -1,0 +1,10 @@
+Dodaj raport dzienny
+<form>
+  <input type="text" placeholder="Nazwa" name="name" [(ngModel)]="dailyreport.name">
+<input type="text" placeholder="Data" name="date" [(ngModel)]="dailyreport.date">
+<button (click)="save()">Zapisz</button>
+</form>
+
+<p *ngIf="confirmed">
+  Poprawnie dodano raport dobowy
+</p>

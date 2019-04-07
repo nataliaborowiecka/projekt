@@ -1,12 +1,12 @@
 <ul>
   <li>
     <a [routerLink]="['/employee/list']">
-      LISTA
+      Lista pracowników
     </a>
   </li>
   <li>
     <a [routerLink]="['/employee/add']">
-      Dodaj
+      Dodaj pracownika
     </a></li>
 </ul>
 <hr>
@@ -23,6 +23,7 @@
       <td>{{ employee.id }}</td>
       <td>{{ employee.name }}</td>
       <td>{{ employee.surname }}</td>
+      <button class="button"></button>
     </tr>
   </tbody>
 </table>
