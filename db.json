@@ -139,11 +139,6 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "Produkt nr 1",
-      "stock": 22222
-    },
-    {
       "id": 2,
       "name": "Produkt nr 2",
       "stock": 100
