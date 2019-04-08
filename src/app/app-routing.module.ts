@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeAddComponent } from './employee/add/add.component';
 import { DailyreportAddComponent} from './dailyreport/add/add.component';
 import { DailyreportListComponent } from './dailyreport/list/list.component';
+import { ProductsListComponent } from './products/list/list.component';
+import { ProductsAddComponent } from './products/add/add.component';
+import { ProductsEditComponent } from './products/edit/edit.component';
 
 
 const routes: Routes = [
@@ -30,6 +33,16 @@ const routes: Routes = [
   {
     path: 'dailyreport/add',
     component: DailyreportAddComponent
+  },
+  {
+    path: 'products',
+    component: ProductsListComponent
+  }, {
+    path: 'products/add',
+    component: ProductsAddComponent
+  }, {
+    path: 'products/:id',
+    component: ProductsEditComponent
   }
 
 ];

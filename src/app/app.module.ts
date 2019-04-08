@@ -6,11 +6,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DailyreportModule } from './dailyreport/dailyreport.module';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [AppComponent, ],
   imports: [EmployeeModule, BrowserModule, AppRoutingModule, DailyreportModule,
     MaterialModule,
+    ProductsModule,
     BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]

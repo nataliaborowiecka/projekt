@@ -124,12 +124,29 @@
       "name": "Natalia",
       "surname": "Boroweicka",
       "id": 25
+    },
+    {
+      "name": "ewqe",
+      "surname": "w",
+      "id": 26
     }
   ],
   "raports": [
     {
       "id": 1,
       "name": "Raport 1"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Produkt nr 1",
+      "stock": 22222
+    },
+    {
+      "id": 2,
+      "name": "Produkt nr 2",
+      "stock": 100
     }
   ]
 }
