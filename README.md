@@ -35,7 +35,9 @@ CO ZROBIC:
 3. npm run start / aplikacja
 4. npm run server / server
 
-bash terminal: 
-ctrl + shift + p 
-select default shell 
+bash terminal:
+ctrl + shift + p
+select default shell
 git bash          useless
+
+https://allegro.pl/oferta/laptop-asus-n56vz-ssd-samsung-512gb-16gb-ram-7937437178
