@@ -1,6 +1,6 @@
 <button mat-raised-button color="primary" [routerLink]="['./add']">Dodaj pracownika</button>
 <hr />
-<table mat-table [dataSource]="employees" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>id</th>

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { DailyreportModule } from './dailyreport/dailyreport.module';
 import { ProductsModule } from './products/products.module';
 import { UsageModule } from './usage/usage.module';
+import {EmployeesService} from "./employee/employee.service";
 
 @NgModule({
   declarations: [AppComponent, ],
@@ -15,7 +16,7 @@ import { UsageModule } from './usage/usage.module';
     MaterialModule,
     ProductsModule,
     BrowserAnimationsModule, UsageModule],
-  providers: [],
+  providers: [EmployeesService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

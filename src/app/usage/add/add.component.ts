@@ -2,32 +2,80 @@ import { Component, OnInit } from '@angular/core';
 import { UsageService } from './../usage.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {EmployeesService} from "../../employee/employee.service";
 @Component({
   selector: 'app-usage-add',
   templateUrl: '../form/form.component.html'
 })
 export class UsageAddComponent implements OnInit {
   usage = {
-    date: '',
+    date: new Date(),
     employee: '',
-    usage: ''
+    usages: []
+  };
+  usageTmp = {
+    water: 0,
+    dye: 0
   };
   confirmed = false;
-
+  employees = [];
+  addNewLine = false;
   constructor(
     private usageService: UsageService,
     private router: Router,
-    private snackBar: MatSnackBar
-  ) {}
+    private snackBar: MatSnackBar,
+    private employeeService: EmployeesService
+  ) {
+    this.employeeService.getList()
+      .subscribe(
+        (employeesFromBackend: any) => {
+          this.employees = employeesFromBackend;
+        }
+      );
+  }
 
-  ngOnInit(): {};
+  ngOnInit() {}
+
+  add() {
+    this.addNewLine = true;
+  }
+
+  saveLine() {
+    this.usage.usages.push(this.usageTmp);
+    this.usageTmp = {
+      water: 0,
+      dye : 0
+    };
+  }
+
+  sumWater() {
+    let sum = 0;
+    for (let i = 0; i < this.usage.usages.length; i++) {
+      sum += +this.usage.usages[i].water;
+    }
+    return sum;
+  }
+
+  sumDye() {
+    let sum = 0;
+    for (let i = 0; i < this.usage.usages.length; i++) {
+      sum += +this.usage.usages[i].dye;
+    }
+
+    return sum;
+  }
+
+  deleteU(index) {
+    this.usage.usages.splice(index, 1);
+  }
 
   save() {
-    this.usageService.add(this.usage).subscribe(response => {
-      this.snackBar.open('Poprawnie dodano', 'Zamknij', {
-        duration: 2000
-      });
-      this.router.navigate(['/usage']);
-    });
+    console.log('do zpaisania', this.usage);
+    // this.usageService.add(this.usage).subscribe(response => {
+    //   this.snackBar.open('Poprawnie dodano', 'Zamknij', {
+    //     duration: 2000
+    //   });
+    //   this.router.navigate(['/usage']);
+    // });
   }
 }

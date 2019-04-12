@@ -1,6 +1,4 @@
 import { MaterialModule } from './../material.module';
-import { EmployeesService } from './employee.service';
-import { HttpClient } from '@angular/common/http';
 import { EmployeeAddComponent } from './add/add.component';
 import { RouterModule } from '@angular/router';
 import { EmployeeListComponent } from './list/list.component';
@@ -24,7 +22,6 @@ import { FormsModule } from '@angular/forms';
   exports: [
   ],
   providers: [
-    EmployeesService
   ]
 })
 export class EmployeeModule {}

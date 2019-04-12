@@ -5,18 +5,63 @@
   </mat-card-header>
   <mat-card-content>
     <form>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Data" required name="date" type="date" [(ngModel)]="usage.date" />
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Wybierz date" name="date" [(ngModel)]="usage.date">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Pracownik" required name="employee" type="text" [(ngModel)]="usage.employee" />
+      <mat-form-field>
+        <mat-label>Pracownicy</mat-label>
+        <mat-select [(ngModel)]="usage.employee" name="employee">
+          <mat-option *ngFor="let employee of employees" [value]="employee.id">
+            {{employee.name}} {{employee.surname}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Zużycie produktów" required name="usage" type="number" [(ngModel)]="usage.usage" />
-      </mat-form-field>
+      <hr>
+      <button mat-button (click)="add()">Dodaj</button>
+      <div *ngIf="addNewLine">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Woda" name="water" [(ngModel)]="usageTmp.water">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Farba" name="dye" [(ngModel)]="usageTmp.dye">
+        </mat-form-field>
+        <button mat-button (click)="saveLine()">Zapisz linie</button>
+      </div>
+      <div>
+<!--        Tutaj zrob ladna tabelke-->
+        <table>
+          <thead>
+          <tr>
+            <td>Woda</td>
+            <td>Farbat</td>
+            <td>Usun</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let u of usage.usages; let i = index">
+            <td>{{u.water}}</td>
+            <td>{{u.dye}}</td>
+            <td (click)="deleteU(i)">usuń</td>
+          </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                Suma wody: {{ sumWater() }}
+              </td>
+              <td>
+                Suma farby: {{ sumDye() }}
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </form>
   </mat-card-content>
   <mat-card-actions align="start">
     <button mat-button (click)="save()">Zapisz</button>
   </mat-card-actions>
 </mat-card>
+
