@@ -134,18 +134,39 @@
   "reports": [
     {
       "id": 1
-       
     }
   ],
   "products": [
     {
-      "id": 2,
-      "name": "Produkt nr 2",
-      "stock": 100
+      "name": "ndjoqwmd",
+      "stock": 2131,
+      "id": 1
     }
-  ]  
-   
-       
-
-     }
-   
+  ],
+  "usage": [
+    {
+      "id": 1,
+      "date": "04.03.2019",
+      "employee": "Marzena",
+      "usage": "894"
+    },
+    {
+      "date": "2019-02-01",
+      "employee": "jjj",
+      "usage": 442,
+      "id": 2
+    },
+    {
+      "date": "2019-04-12",
+      "employee": "segegw",
+      "usage": 344124,
+      "id": 3
+    },
+    {
+      "date": "2019-04-06",
+      "employee": "sdfsfs24324",
+      "usage": 3122,
+      "id": 4
+    }
+  ]
+}

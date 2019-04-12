@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title *ngIf="id">Edytuj zużycie produktów</mat-card-title>
+    <mat-card-title *ngIf="!id">Dodaj zużycie produktów</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Data" required name="date" type="date" [(ngModel)]="usage.date" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Pracownik" required name="employee" type="text" [(ngModel)]="usage.employee" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Zużycie produktów" required name="usage" type="number" [(ngModel)]="usage.usage" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="start">
+    <button mat-button (click)="save()">Zapisz</button>
+  </mat-card-actions>
+</mat-card>

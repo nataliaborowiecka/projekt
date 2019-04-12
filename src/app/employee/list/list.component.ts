@@ -11,10 +11,10 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'surname',];
   dataSource = [];
 
-  
+
 
   constructor(private employeesService: EmployeesService) { }
-   
+
   ngOnInit() {
     this.employeesService.getList().subscribe(
       (employees: any) => {

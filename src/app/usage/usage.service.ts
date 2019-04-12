@@ -5,10 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsageService {
-
   constructor(private httpClient: HttpClient) {}
-  
+
   getList() {
-    return this.httpClient.get('http://localhost:3000/products');
+    return this.httpClient.get('http://localhost:3000/usage');
   }
+
+  add(usage) {
+    return this.httpClient.post('http://localhost:3000/usage', usage);
   }
+}

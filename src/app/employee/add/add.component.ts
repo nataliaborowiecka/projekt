@@ -6,24 +6,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './employee-add.component.html'
 })
 export class EmployeeAddComponent implements OnInit {
-
   employee = {
     name: '',
     surname: ''
   };
   confirmed = false;
 
-  constructor(private employeesService: EmployeesService) { }
+  constructor(private employeesService: EmployeesService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   save() {
-    this.employeesService.add(this.employee).subscribe(
-      (response) => {
-        console.log('ODostalem odpowiedz', response);
-        this.confirmed = true;
-      }
-    )
-
+    this.employeesService.add(this.employee).subscribe(response => {
+      console.log('ODostalem odpowiedz', response);
+      this.confirmed = true;
+    });
   }
 }
