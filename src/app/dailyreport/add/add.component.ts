@@ -7,19 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DailyreportAddComponent implements OnInit {
 dailyreport = {
-  name: '',
-  date: ''
+  date: '',
+ earnings: '',
+ cash: '',
+ transfer:''
 };
 confirmed = false;
   constructor(private dailyreportService: DailyReportService) {}
 
   ngOnInit(): void {}
   save() {
-    // this.dailyreportService.add(this.dailyreport).subscribe(
-    //   (reponse) => {
-    //     console.log('Dostałem odpowiedz', response);
-    //     this.confirmed = true;
-    //   }
-    // )
-  }
-}
+  }}

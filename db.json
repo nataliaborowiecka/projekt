@@ -131,10 +131,10 @@
       "id": 26
     }
   ],
-  "raports": [
+  "reports": [
     {
-      "id": 1,
-      "name": "Raport 1"
+      "id": 1
+       
     }
   ],
   "products": [
@@ -143,5 +143,9 @@
       "name": "Produkt nr 2",
       "stock": 100
     }
-  ]
-}
+  ]  
+   
+       
+
+     }
+   

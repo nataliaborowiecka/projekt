@@ -7,7 +7,8 @@ import { DailyreportListComponent } from './dailyreport/list/list.component';
 import { ProductsListComponent } from './products/list/list.component';
 import { ProductsAddComponent } from './products/add/add.component';
 import { ProductsEditComponent } from './products/edit/edit.component';
-
+import { UsageListComponent } from './usage/list/list.component'
+import { UsageAddComponent } from './usage/add/add.component'
 
 const routes: Routes = [
   {
@@ -43,6 +44,12 @@ const routes: Routes = [
   }, {
     path: 'products/:id',
     component: ProductsEditComponent
+  }, {
+    path: 'usage',
+    component: UsageListComponent
+  }, {
+    path: 'usage/add',
+    component: UsageAddComponent
   }
 
 ];

@@ -2,24 +2,24 @@ import { EmployeesService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'app-list',
   templateUrl: './employee-list.component.html',
   styleUrls: ['./app-employee-list.css'],
 
 })
 export class EmployeeListComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'name', 'surname',];
+  dataSource = [];
 
-  employeesList = [];
+  
 
-  constructor(private employeesService: EmployeesService) {
+  constructor(private employeesService: EmployeesService) { }
+   
+  ngOnInit() {
     this.employeesService.getList().subscribe(
       (employees: any) => {
-        this.employeesList = employees;
+        this.dataSource = employees;
       }
     )
-  }
-
-  ngOnInit(): void { }
-
-
+    }
 }
