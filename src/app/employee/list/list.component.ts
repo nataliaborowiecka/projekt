@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class EmployeeListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'surname',];
+  displayedColumns: string[] = ['id', 'name', 'surname', 'action'];
   dataSource = [];
 
 
@@ -23,4 +23,15 @@ export class EmployeeListComponent implements OnInit {
       }
       )
     }
-}
+    delete(element){
+      if (confirm('Czy napewno chcesz usunąć?')) {
+        this.employeesService.delete(element)
+        .subscribe(
+          (response) => {
+            this.dataSource = this.dataSource.filter(employee => employee.id !== element.id);
+
+    } )
+  }
+    }
+  }
+        

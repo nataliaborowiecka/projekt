@@ -14,7 +14,7 @@ export class UsageAddComponent implements OnInit {
     usages: []
   };
   usageTmp = {
-    water: 0,
+    bleach: 0,
     dye: 0
   };
   confirmed = false;
@@ -43,15 +43,15 @@ export class UsageAddComponent implements OnInit {
   saveLine() {
     this.usage.usages.push(this.usageTmp);
     this.usageTmp = {
-      water: 0,
+      bleach: 0,
       dye : 0
     };
   }
 
-  sumWater() {
+  sumBleach() {
     let sum = 0;
     for (let i = 0; i < this.usage.usages.length; i++) {
-      sum += +this.usage.usages[i].water;
+      sum += +this.usage.usages[i].bleach;
     }
     return sum;
   }

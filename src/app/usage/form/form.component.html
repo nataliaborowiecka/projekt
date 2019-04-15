@@ -19,44 +19,46 @@
         </mat-select>
       </mat-form-field>
       <hr>
-      <button mat-button (click)="add()">Dodaj</button>
+      <button mat-fab color="primary" (click)="add()">Dodaj</button>
       <div *ngIf="addNewLine">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Woda" name="water" [(ngModel)]="usageTmp.water">
+          <input matInput placeholder="Rozjaśniacz" name="bleach" [(ngModel)]="usageTmp.bleach">
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Farba" name="dye" [(ngModel)]="usageTmp.dye">
         </mat-form-field>
-        <button mat-button (click)="saveLine()">Zapisz linie</button>
+        <button mat-raised-button color="primary" (click)="saveLine()">Dodaj</button>
       </div>
       <div>
 <!--        Tutaj zrob ladna tabelke-->
-        <table>
-          <thead>
-          <tr>
-            <td>Woda</td>
-            <td>Farbat</td>
-            <td>Usun</td>
-          </tr>
-          </thead>
-          <tbody>
-          <tr *ngFor="let u of usage.usages; let i = index">
-            <td>{{u.water}}</td>
-            <td>{{u.dye}}</td>
-            <td (click)="deleteU(i)">usuń</td>
-          </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td>
-                Suma wody: {{ sumWater() }}
-              </td>
-              <td>
-                Suma farby: {{ sumDye() }}
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+<table>
+    <thead>
+    <tr>
+      <td>Woda</td>
+      <td>Farbat</td>
+      
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let u of usage.usages; let i = index">
+      <td>{{u.bleach}}</td>
+      <td>{{u.dye}}</td>
+       <td> <button mat-raised-button color="primary" (click)="deleteU(i)">Usuń</button></td>
+
+    </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          Suma: {{ sumBleach() }}
+        </td>
+        <td>
+          Suma farby: {{ sumDye() }}
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+    
       </div>
     </form>
   </mat-card-content>

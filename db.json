@@ -1,11 +1,6 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "Micha",
-      "surname": "Wojcik"
-    },
-    {
       "id": 2,
       "name": "Natalia",
       "surname": "Borowiecka"
@@ -21,24 +16,9 @@
       "id": 4
     },
     {
-      "name": "ffff",
-      "surname": "wwww",
-      "id": 5
-    },
-    {
-      "name": "dasdasd",
-      "surname": "qweqwe",
-      "id": 6
-    },
-    {
       "name": "qew",
       "surname": "qwe",
       "id": 7
-    },
-    {
-      "name": "Kamila",
-      "surname": "Boroweicka",
-      "id": 8
     },
     {
       "name": "",
@@ -53,22 +33,12 @@
     {
       "name": "",
       "surname": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "surname": "",
       "id": 12
     },
     {
       "name": "",
       "surname": "",
       "id": 13
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 14
     },
     {
       "name": "",
@@ -129,6 +99,41 @@
       "name": "ewqe",
       "surname": "w",
       "id": 26
+    },
+    {
+      "name": "fgs",
+      "surname": "grg",
+      "id": 27
+    },
+    {
+      "name": "fgs",
+      "surname": "grg",
+      "id": 28
+    },
+    {
+      "name": "fgs",
+      "surname": "grg",
+      "id": 29
+    },
+    {
+      "name": "fgs",
+      "surname": "grg",
+      "id": 30
+    },
+    {
+      "name": "wef",
+      "surname": "ege",
+      "id": 31
+    },
+    {
+      "name": "fwe",
+      "surname": "fwef",
+      "id": 32
+    },
+    {
+      "name": "asc",
+      "surname": "assa",
+      "id": 33
     }
   ],
   "reports": [
@@ -138,8 +143,8 @@
   ],
   "products": [
     {
-      "name": "ndjoqwmd",
-      "stock": 2131,
+      "name": "Natalia",
+      "stock": 3,
       "id": 1
     }
   ],

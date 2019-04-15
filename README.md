@@ -41,3 +41,33 @@ select default shell
 git bash          useless
 
 https://allegro.pl/oferta/laptop-asus-n56vz-ssd-samsung-512gb-16gb-ram-7937437178
+
+
+                    TABELKA SUMUJACA
+<table>
+          <thead>
+          <tr>
+            <td>Woda</td>
+            <td>Farbat</td>
+            
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let u of usage.usages; let i = index">
+            <td>{{u.bleach}}</td>
+            <td>{{u.dye}}</td>
+             <td> <button mat-raised-button color="primary" (click)="deleteU(i)">Usuń</button></td>
+
+          </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                Suma: {{ sumBleach() }}
+              </td>
+              <td>
+                Suma farby: {{ sumDye() }}
+              </td>
+            </tr>
+          </tfoot>
+        </table>

@@ -13,6 +13,10 @@ export class EmployeesService {
   add(obj) {
     return this.httpClient.post('http://localhost:3000/employees', obj);
   }
+  delete(employee) {
+  return this.httpClient.delete('http://localhost:3000/employees' + employee.id)
+}
+ 
 }
 
 
