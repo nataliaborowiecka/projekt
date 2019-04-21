@@ -134,27 +134,68 @@
       "name": "asc",
       "surname": "assa",
       "id": 33
-    }
-  ],
-  "reports": [
-    {
-      "id": 1
-    }
-  ],
-  "products": [
-    {
-      "name": "Natalia",
-      "stock": 3,
-      "id": 1
-    }
-  ],
-  "usage": [
-    {
-      "id": 1,
-      "date": "04.03.2019",
-      "employee": "Marzena",
-      "usage": "894"
     },
+    {
+      "name": "retew",
+      "surname": "fhsd",
+      "id": 34
+    },
+    {
+      "name": "xcAc",
+      "surname": "vdsvds",
+      "id": 35
+    },
+    {
+      "name": "daw",
+      "surname": "grg",
+      "id": 36
+    },
+    {
+      "name": "asda",
+      "surname": "csacsa",
+      "id": 37
+    },
+    {
+      "service": "csacc",
+      "cost": 534543,
+      "id": 38
+    },
+    {
+      "name": "htr",
+      "surname": "hrthr",
+      "id": 39
+    },
+    {
+      "id": 40,
+      "service": "dvcw",
+      "cost": 24323
+    },
+    {
+      "id": 41,
+      "expense": "",
+      "price": ""
+    },
+    {
+      "id": 42,
+      "notes": ""
+    }
+  ],
+  "dailyreport": [
+    {
+      "id": "",
+      "service": "",
+      "cost": ""
+    }
+  ],
+  "expense": [
+    {
+      "id": "",
+      "expense": "",
+      "price": ""
+    }
+  ],
+  "products": [],
+  "usage": [
     {
       "date": "2019-02-01",
       "employee": "jjj",
@@ -162,16 +203,16 @@
       "id": 2
     },
     {
-      "date": "2019-04-12",
-      "employee": "segegw",
-      "usage": 344124,
-      "id": 3
-    },
-    {
       "date": "2019-04-06",
       "employee": "sdfsfs24324",
       "usage": 3122,
       "id": 4
+    },
+    {
+      "date": "2019-04-21T07:39:19.076Z",
+      "employee": "",
+      "usages": [],
+      "id": 6
     }
   ]
 }

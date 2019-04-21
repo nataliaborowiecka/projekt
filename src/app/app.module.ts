@@ -9,13 +9,13 @@ import { DailyreportModule } from './dailyreport/dailyreport.module';
 import { ProductsModule } from './products/products.module';
 import { UsageModule } from './usage/usage.module';
 import {EmployeesService} from "./employee/employee.service";
-
+import { MonthlyreportModule } from "./monthlyreport/monthlyreport.module";
 @NgModule({
   declarations: [AppComponent, ],
   imports: [EmployeeModule, BrowserModule, AppRoutingModule, DailyreportModule,
     MaterialModule,
     ProductsModule,
-    BrowserAnimationsModule, UsageModule],
+    BrowserAnimationsModule, UsageModule, MonthlyreportModule],
   providers: [EmployeesService],
   bootstrap: [AppComponent]
 })

@@ -17,4 +17,11 @@ export class UsageListComponent implements OnInit {
       this.dataSource = usage;
     });
   }
+  delete(element) {
+    if (confirm('Czy napewno chcesz usunąć?')) {
+      this.usageService.delete(element)
+      .subscribe(
+        (response) => {
+          this.dataSource = this.dataSource.filter(usage => usage.id !== element.id);
 }
+      )}}}

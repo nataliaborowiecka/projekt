@@ -1,0 +1,27 @@
+ <mat-card>
+  <mat-card-header>
+  <mat-card-title >Dodaj usługę</mat-card-title>
+      
+  </mat-card-header>
+  <mat-card-content>
+<form #form="ngForm" >
+<mat-form-field class="example-full-width">
+  <input matInput  #service="ngModel" type="text" placeholder="Rodzaj usługi" name="service"
+   required [(ngModel)]="dailyreport.service">
+   <mat-error *ngIf="service.errors && (service.dirty || service.touched)">
+   Rodzaj usługi jest <strong>wymagany</strong>
+  </mat-error>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input matInput #cost="ngModel" type="number" placeholder="Koszt usługi" name="cost"
+  required [(ngModel)]="dailyreport.cost">
+  <mat-error *ngIf="cost.errors && (cost.dirty || cost.touched)">
+      Koszt jest <strong>wymagany</strong>
+    </mat-error>
+</mat-form-field>
+
+<button [disabled]="form.invalid" mat-raised-button color="primary" (click)="save()">Zapisz</button>
+</form> 
+
+
+

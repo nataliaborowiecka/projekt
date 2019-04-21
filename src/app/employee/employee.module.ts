@@ -6,12 +6,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
+import { EmployeeEditComponent } from './edit/edit.component';
  
 
 @NgModule({
   declarations: [
     EmployeeAddComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+  
+   EmployeeEditComponent
   ],
   imports: [CommonModule, RouterModule,
     HttpClientModule,

@@ -2,15 +2,22 @@ import { EmployeeListComponent } from './employee/list/list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EmployeeAddComponent } from './employee/add/add.component';
-import { DailyreportAddComponent } from './dailyreport/add/add.component';
+import { DailyreportAddServiceComponent } from './dailyreport/add/add-service.component';
 import { DailyreportListComponent } from './dailyreport/list/list.component';
 import { ProductsListComponent } from './products/list/list.component';
 import { ProductsAddComponent } from './products/add/add.component';
 import { ProductsEditComponent } from './products/edit/edit.component';
 import { UsageListComponent } from './usage/list/list.component';
 import { UsageAddComponent } from './usage/add/add.component';
-
+import { EmployeeEditComponent } from './employee/edit/edit.component';
+import { DailyreportAddNotesComponent } from './dailyreport/add/add-notes.component';
+import { DailyreportAddExpensesComponent } from './dailyreport/add/add-expenses.component';
+import { MonthlyreportListComponent} from './monthlyreport/list/list.component';
 const routes: Routes = [
+  {
+    path: 'monthlyreport/list',
+    component: MonthlyreportListComponent
+  },
   {
     path: 'employee/list',
     component: EmployeeListComponent
@@ -32,8 +39,16 @@ const routes: Routes = [
     component: DailyreportListComponent
   },
   {
-    path: 'dailyreport/add',
-    component: DailyreportAddComponent
+    path: 'dailyreport/addservice',
+    component: DailyreportAddServiceComponent
+  },
+  {
+  path: 'dailyreport/addnotes',
+  component: DailyreportAddNotesComponent
+  },
+  {
+    path: 'dailyreport/addexpenses',
+    component: DailyreportAddExpensesComponent
   },
   {
     path: 'products',
@@ -58,6 +73,10 @@ const routes: Routes = [
   {
     path: 'usage/form',
     component: UsageAddComponent
+  },
+  {
+    path: 'employee/:id',
+    component: EmployeeEditComponent
   }
 ];
 

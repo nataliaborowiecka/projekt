@@ -6,8 +6,9 @@ import { MaterialModule } from '../material.module';
 import { ProductsService } from '../products/products.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { UsageEditComponent } from './edit/edit.component';
 @NgModule({
-  declarations: [UsageAddComponent, UsageListComponent],
+  declarations: [UsageAddComponent, UsageListComponent, UsageEditComponent],
   imports: [CommonModule, MaterialModule, RouterModule, FormsModule],
   providers: [ProductsService]
 })

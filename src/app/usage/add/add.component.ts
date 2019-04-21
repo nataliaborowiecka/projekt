@@ -70,12 +70,12 @@ export class UsageAddComponent implements OnInit {
   }
 
   save() {
-    console.log('do zpaisania', this.usage);
-    // this.usageService.add(this.usage).subscribe(response => {
-    //   this.snackBar.open('Poprawnie dodano', 'Zamknij', {
-    //     duration: 2000
-    //   });
-    //   this.router.navigate(['/usage']);
-    // });
+    
+    this.usageService.add(this.usage).subscribe(response => {
+      this.snackBar.open('Poprawnie dodano', 'Zamknij', {
+        duration: 2000
+      });
+      this.router.navigate(['/usage']);
+    });
   }
 }

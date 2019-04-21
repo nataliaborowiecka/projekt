@@ -1,6 +1,7 @@
 <button mat-raised-button color="primary" [routerLink]="['./form']">Dodaj zużycie produktów</button>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef>Data</th>
     <td mat-cell *matCellDef="let element">{{ element.date }}</td>
@@ -9,7 +10,7 @@
   <!-- Name Column -->
   <ng-container matColumnDef="employee">
     <th mat-header-cell *matHeaderCellDef>Pracowik</th>
-    <td mat-cell *matCellDef="let element">{{ element.employee }}</td>
+    <td mat-cell *matCellDef="let element" [routerLink]="['./', element.id]">{{ element.employee }}</td>
   </ng-container>
 
   <!-- Weight Column -->
@@ -19,7 +20,8 @@
   </ng-container>
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef>Akcje</th>
-    <td mat-cell *matCellDef="let element">vv</td>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon (click)="delete(element)">delete</mat-icon>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

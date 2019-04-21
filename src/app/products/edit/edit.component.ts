@@ -30,8 +30,8 @@ export class ProductsEditComponent implements OnInit {
   save() {
     this.productsService.update(this.product, this.id)
       .subscribe(
-        (response) => {
-          console.log('Response', response);
+        (response: any) => {
+          this.product = response;
         }
       )
   }
