@@ -4,7 +4,7 @@ import { DailyreportListComponent } from './list/list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from './../material.module';
+import { MaterialModule } from './../../material.module';
 import { DailyreportAddExpensesComponent } from './add/add-expenses.component';
 import { DailyreportAddNotesComponent } from './add/add-notes.component';
 
@@ -16,4 +16,4 @@ import { DailyreportAddNotesComponent } from './add/add-notes.component';
   exports: [],
   providers: []
 })
-export class DailyreportModule {}
+export class DailyreportModule { }
