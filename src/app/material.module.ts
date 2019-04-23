@@ -12,6 +12,7 @@ import {MatNativeDateModule} from "@angular/material";
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
-  exports: [MatSelectModule, MatIconModule, MatSnackBarModule, MatInputModule, MatButtonModule, MatListModule, MatTableModule, MatCardModule, MatDatepickerModule, MatNativeDateModule]
+  exports: [MatSelectModule, MatIconModule, MatSnackBarModule, MatInputModule,
+    MatButtonModule, MatListModule, MatTableModule, MatCardModule, MatDatepickerModule, MatNativeDateModule]
 })
 export class MaterialModule {}

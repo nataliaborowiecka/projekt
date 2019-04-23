@@ -194,7 +194,13 @@
       "price": ""
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "name": "",
+      "stock": 0,
+      "id": 1
+    }
+  ],
   "usage": [
     {
       "date": "2019-02-01",

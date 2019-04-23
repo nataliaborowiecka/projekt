@@ -1,1 +1,17 @@
 LOGIN
+<div class="parent">
+  <mat-card id="form" class="child">
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="Login" name="login" [(ngModel)]="user.login" />
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <input matInput placeholder="Hasło" name="password" [(ngModel)]="user.password" />
+      </mat-form-field>
+      <br />
+      <p *ngIf="error">Zły login i hasło</p>
+      <button mat-raised-button (click)="save()">Zaloguj</button>
+    </div>
+  </mat-card>
+</div>
