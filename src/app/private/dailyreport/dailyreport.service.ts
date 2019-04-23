@@ -4,15 +4,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DailyReportService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
   getList() {
-    return this.httpClient.get('http://localhost:3000/employees');
+    return this.httpClient.get('http://localhost:3000/dailyreport');
+  }
+
+  update(obj) {
+    return this.httpClient.put('http://localhost:3000/dailyreport/' + obj.id, obj);
   }
 
   add(obj) {
-    return this.httpClient.post('http://localhost:3000/employees', obj);
+    return this.httpClient.post('http://localhost:3000/dailyreport', obj);
   }
   delete(employee) {
-    return this.httpClient.delete('http://localhost:3000/employees' + employee.id);
+    return this.httpClient.delete('http://localhost:3000/dailyreport' + employee.id);
   }
 }

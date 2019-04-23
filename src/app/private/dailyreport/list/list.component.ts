@@ -1,3 +1,4 @@
+import { DailyReportService } from './../dailyreport.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,7 +6,28 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dailyreport-list.component.html'
 })
 export class DailyreportListComponent implements OnInit {
-  constructor() {}
+  displayedColumns: string[] = ['id', 'date', 'notes', 'action'];
+  dataSource = [];
+  constructor(private dailyRaport: DailyReportService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dailyRaport.getList()
+      .subscribe(
+        (listOfDailyRaport: any) => {
+          this.dataSource = listOfDailyRaport;
+        }
+      )
+  }
+
+  addDailyRaport() {
+    const dailyRaport = {
+      date: new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-')
+    };
+    this.dailyRaport.add(dailyRaport)
+      .subscribe(
+        res => {
+          console.log('Dodano daily raport');
+        }
+      )
+  }
 }

@@ -8,20 +8,50 @@ import { Router } from '@angular/router'
   templateUrl: './add-notes.component.html'
 })
 export class DailyreportAddNotesComponent implements OnInit {
-dailyreportnotes = {
-  id: "",
-  notes: ""
-};
-confirmed = false;
+  dailyreportnotes = {
+    notes: ''
+  };
   constructor(private dailyreportService: DailyReportService,
     private snackBar: MatSnackBar,
-    private router: Router) {}
+    private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
   save() {
-    this.dailyreportService.add(this.dailyreportnotes).subscribe(response => {
-      this.snackBar.open('Poprawnie dodano uwagę', 'Zamknij', {
-        duration: 2000,
-      });
-      this.router.navigate(['/dailyreport']);
-    })}}
+    const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-');
+    this.dailyreportService.getList()
+      .subscribe(
+        (list: any) => {
+          console.log('Dostales liste', list);
+          const dailyRaport = list.filter(obj => obj.date == today)[0];
+          console.log('Twoj daily raport to', dailyRaport);
+          if (dailyRaport.notes) {
+            dailyRaport.notes.push({
+              notes: this.dailyreportnotes.notes
+            });
+          } else {
+            dailyRaport.notes = [];
+            dailyRaport.notes.push({
+              notes: this.dailyreportnotes.notes
+            });
+          }
+          console.log('Aktualizacja obiektu');
+          this.dailyreportService.update(dailyRaport)
+            .subscribe(
+              (response) => {
+                console.log('Zaktualizowano')
+                // Przenosimy usera na liste daily raport
+              }
+            )
+        }
+      )
+    // console.log('dailyreportnotes', this.dailyreportnotes.notes)
+    //   this.dailyreportService.add(this.dailyreportnotes).subscribe(response => {
+    //     this.snackBar.open('Poprawnie dodano uwagę', 'Zamknij', {
+    //       duration: 2000,
+    //     });
+    //     this.router.navigate(['/dailyreport']);
+    //   })
+    // }
+  }
+}

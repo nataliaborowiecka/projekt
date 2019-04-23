@@ -182,9 +182,20 @@
   ],
   "dailyreport": [
     {
-      "id": "",
-      "service": "",
-      "cost": ""
+      "date": "23-04-2019",
+      "id": 1,
+      "notes": [
+        {
+          "notes": "sdfsdf"
+        },
+        {
+          "notes": "5345345"
+        }
+      ]
+    },
+    {
+      "date": "22-04-2019",
+      "id": 2
     }
   ],
   "expense": [
