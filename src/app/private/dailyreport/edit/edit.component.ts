@@ -10,12 +10,19 @@ import { DailyReportService } from '../dailyreport.service';
 export class DailyreportEditComponent implements OnInit {
   id = '';
   dailyreport = {
-    notes: []
+    notes: [],
+    expenses: [],
+    service: []
   };
   editNotesText = '';
   editNotesActive = false;
   whichNotesIsEdit = '';
-
+  editExpensesText = '';
+  editExpensesActive = false;
+  whihExpensesIsEdit = '';
+  editServiceText = '';
+  editServiceActive = false;
+  whichServiceIsEdit = '';
   constructor(private DailyreportService: DailyReportService,
     private AcRouter: ActivatedRoute) { }
 
@@ -48,5 +55,48 @@ export class DailyreportEditComponent implements OnInit {
         alert('Poprawnie usunieto');
       });
   }
+  editExpenses(expenses, index) {
+    this.editExpensesText = expenses.expenses;
+    this.whihExpensesIsEdit = index;
+    this.editExpensesActive = true;
+  }
 
+  saveExpenses() {
+    this.dailyreport.expenses[this.whihExpensesIsEdit].expense = this.editExpensesText;
+    this.DailyreportService.update(this.dailyreport)
+      .subscribe((response) => {
+        alert('Poprawnie edytowano');
+        this.editExpensesActive = false;
+      });
+  }
+
+  deleteExpenses(index) {
+    this.dailyreport.expenses.splice(index, 1);
+    this.DailyreportService.update(this.dailyreport)
+      .subscribe((reponse) => {
+        alert('Poprawnie usunięto');
+      });
+  }
+  editService(service, index) {
+    this.editServiceText = service.service;
+    this.whichServiceIsEdit = index;
+    this.editServiceActive = true;
+  }
+
+  saveService() {
+    this.dailyreport.service[this.whichServiceIsEdit].service = this.editServiceText;
+    this.DailyreportService.update(this.dailyreport)
+      .subscribe((response) => {
+        alert('Poprawnie edytowano');
+        this.editServiceActive = false;
+      });
+  }
+
+  deleteService(index) {
+    this.dailyreport.service.splice(index, 1);
+    this.DailyreportService.update(this.dailyreport)
+      .subscribe((reponse) => {
+        alert('Poprawnie usunięto');
+      });
+  }
 }

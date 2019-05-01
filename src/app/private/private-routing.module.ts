@@ -37,14 +37,12 @@ const routes: Routes = [
         path: 'employee/add',
         component: EmployeeAddComponent
       },
+
       {
         path: 'dailyreport/list',
         component: DailyreportListComponent
       },
-      {
-        path: 'dailyreport/:id',
-        component: DailyreportEditComponent
-      },
+
       {
         path: 'dailyreport',
         component: DailyreportListComponent
@@ -60,6 +58,10 @@ const routes: Routes = [
       {
         path: 'dailyreport/addexpenses',
         component: DailyreportAddExpensesComponent
+      },
+      {
+        path: 'dailyreport/:id',
+        component: DailyreportEditComponent
       },
       {
         path: 'products',

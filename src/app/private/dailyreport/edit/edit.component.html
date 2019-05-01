@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Edytuj pracownika</mat-card-title>
+    <mat-card-title>Edytuj Uwagi</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <mat-form-field>
@@ -27,6 +27,70 @@
         </td>
         <td>
           <a (click)="deleteNotes(index)">U</a>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Edytuj wydatki</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <tr>
+        <td>Nazwa wydatku</td>
+        <td>Edytuj</td>
+        <td>Usun</td>
+      </tr>
+      <tr *ngIf="editExpensesActive">
+        <td><input type="text" [(ngModel)]="editExpensesText" name="editExpensesText"></td>
+        <td>
+          <button (click)="saveExpenses()">Zapisz</button>
+        </td>
+      </tr>
+      <tr *ngFor="let n of dailyreport.expenses; let index = index">
+        <td>
+          {{n.expense}}
+        </td>
+        <td>
+          <a (click)="editExpenses(n, index)">Edit</a>
+        </td>
+        <td>
+          <a (click)="deleteExpenses(index)">U</a>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Edytuj usługi</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table>
+      <tr>
+        <td>Nazwa usługi</td>
+        <td>Edytuj</td>
+        <td>Usun</td>
+      </tr>
+      <tr *ngIf="editServiceActive">
+        <td><input type="text" [(ngModel)]="editServiceText" name="editServiceText"></td>
+        <td>
+          <button (click)="saveService()">Zapisz</button>
+        </td>
+      </tr>
+      <tr *ngFor="let n of dailyreport.service; let index = index">
+        <td>
+          {{n.service}}
+        </td>
+        <td>
+          <a (click)="editService(n, index)">Edit</a>
+        </td>
+        <td>
+          <a (click)="deleteService(index)">U</a>
         </td>
       </tr>
     </table>
