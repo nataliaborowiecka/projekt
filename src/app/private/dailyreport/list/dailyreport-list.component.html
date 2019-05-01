@@ -1,6 +1,6 @@
 <button mat-raised-button color="primary" (click)="addDailyRaport()">Dodaj Raport Dzienny</button>
 <button mat-raised-button color="primary" [routerLink]="['./addservice']">Dodaj usługę</button>
-<button mat-raised-button [routerLink]="['./addexpenses']">Dodaj wydatki </button>
+<button mat-raised-button [routerLink]="['/app/dailyreport//addexpenses']">Dodaj wydatki </button>
 <button mat-raised-button color="primary" [routerLink]="['./addnotes']">Dodaj uwagi</button>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -30,7 +30,7 @@
     <td mat-cell *matCellDef="let element">
       <ul>
         <li *ngFor="let n of element.expenses">
-          {{n.expenses}}
+          {{n.expense}} - {{ n.price }}
         </li>
       </ul>
     </td>

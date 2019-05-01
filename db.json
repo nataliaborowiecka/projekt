@@ -233,20 +233,6 @@
           "notes": ""
         }
       ],
-      "expenses": [
-        {
-          "expenses": ""
-        },
-        {
-          "expenses": ""
-        },
-        {
-          "expenses": ""
-        },
-        {
-          "expenses": ""
-        }
-      ],
       "service": [
         {
           "service": ""
@@ -254,19 +240,13 @@
         {
           "service": ""
         }
+      ],
+      "expenses": [
+        {
+          "expense": "Michal",
+          "price": 1
+        }
       ]
-    },
-    {
-      "date": "01-05-2019",
-      "id": 7
-    },
-    {
-      "date": "01-05-2019",
-      "id": 8
-    },
-    {
-      "date": "01-05-2019",
-      "id": 9
     }
   ],
   "expense": [

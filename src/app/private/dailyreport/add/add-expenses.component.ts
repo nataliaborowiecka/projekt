@@ -8,42 +8,38 @@ import { Router } from '@angular/router'
   templateUrl: './add-expenses.component.html'
 })
 export class DailyreportAddExpensesComponent implements OnInit {
-dailyreportexpense = {
-  id: "",
-  expense: "",
-  price: ""
-};
+  dailyreport = {
+    expense: '',
+    price: ''
+  };
   constructor(private dailyreportService: DailyReportService,
     // private snackBar: MatSnackBar,
-    private router: Router) {}
+    private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
   save() {
     const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-');
     this.dailyreportService.getList()
-    .subscribe(
-      (list: any) => {
-        console.log('Dostales liste', list);
-        const dailyRaport = list.filter(obj => obj.date == today)[0];
-        console.log('Twoj daily raport to', dailyRaport);
-        if (dailyRaport.expenses) {
-          dailyRaport.expenses.push({
-            expenses: this.dailyreportexpense.expense
-          });
-        } else {
-          dailyRaport.expenses = [];
-          dailyRaport.expenses.push({
-            expenses: this.dailyreportexpense.expense
-          });
-        }
-        console.log('Aktualizacja obiektu');
-        this.dailyreportService.update(dailyRaport)
-          .subscribe(
-            (response) => {
-              console.log('Zaktualizowano')
-            })});
-            this.router.navigate(['/dailyreport/list']);
+      .subscribe(
+        (list: any) => {
+          console.log('Dostales liste', list);
+          const dailyRaport = list.filter(obj => obj.date == today)[0];
+          console.log('Twoj daily raport to', dailyRaport);
+          if (dailyRaport.expenses) {
+            dailyRaport.expenses.push(this.dailyreport);
+          } else {
+            dailyRaport.expenses = [];
+            dailyRaport.expenses.push(this.dailyreport);
+          }
+          console.log('Aktualizacja obiektu');
+          this.dailyreportService.update(dailyRaport)
+            .subscribe(
+              (response) => {
+                console.log('Zaktualizowano')
+                this.router.navigate(['/app//dailyreport/list']);
+              })
+        });
 
-
-
-    }}
+  }
+}
