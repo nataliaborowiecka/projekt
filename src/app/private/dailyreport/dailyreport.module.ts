@@ -7,11 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './../../material.module';
 import { DailyreportAddExpensesComponent } from './add/add-expenses.component';
 import { DailyreportAddNotesComponent } from './add/add-notes.component';
+import { DailyreportEditComponent } from './edit/edit.component';
 
 
 
 @NgModule({
-  declarations: [DailyreportAddServiceComponent, DailyreportAddExpensesComponent, DailyreportAddNotesComponent, DailyreportListComponent],
+  declarations: [DailyreportAddServiceComponent, DailyreportAddExpensesComponent, DailyreportAddNotesComponent,
+    DailyreportListComponent, DailyreportEditComponent],
   imports: [CommonModule, RouterModule, FormsModule, MaterialModule],
   exports: [],
   providers: []

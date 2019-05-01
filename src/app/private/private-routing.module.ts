@@ -14,11 +14,13 @@ import { EmployeeEditComponent } from './employee/edit/edit.component';
 import { DailyreportAddNotesComponent } from './dailyreport/add/add-notes.component';
 import { DailyreportAddExpensesComponent } from './dailyreport/add/add-expenses.component';
 import { MonthlyreportListComponent } from './monthlyreport/list/list.component';
+import { DailyreportEditComponent } from './dailyreport/edit/edit.component';
 const routes: Routes = [
   {
     path: '',
     component: PrivateComponent,
     children: [
+
       {
         path: 'monthlyreport/list',
         component: MonthlyreportListComponent
@@ -38,6 +40,10 @@ const routes: Routes = [
       {
         path: 'dailyreport/list',
         component: DailyreportListComponent
+      },
+      {
+        path: 'dailyreport/:id',
+        component: DailyreportEditComponent
       },
       {
         path: 'dailyreport',

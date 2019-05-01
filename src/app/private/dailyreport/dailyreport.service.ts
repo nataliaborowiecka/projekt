@@ -19,4 +19,7 @@ export class DailyReportService {
   delete(employee) {
     return this.httpClient.delete('http://localhost:3000/dailyreport' + employee.id);
   }
+  getOneById(id) {
+    return this.httpClient.get('http://localhost:3000/dailyreport/' + id);
+  }
 }

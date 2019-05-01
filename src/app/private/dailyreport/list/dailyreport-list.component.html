@@ -11,7 +11,7 @@
 
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef>Date</th>
-    <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    <td mat-cell *matCellDef="let element" [routerLink]="['./', element.id]">{{ element.date }}</td>
   </ng-container>
 
   <ng-container matColumnDef="notes">
@@ -41,7 +41,7 @@
     <td mat-cell *matCellDef="let element">
       <ul>
         <li *ngFor="let n of element.service">
-          {{n.service}}
+          {{n.service}} - {{n.cost}}
         </li>
       </ul>
     </td>

@@ -17,11 +17,11 @@ export class EmployeeEditComponent implements OnInit {
   };
 
   constructor(private acRouter: ActivatedRoute,
-              private employeesService: EmployeesService,
-              private snackBar: MatSnackBar,
-    private router: Router) { 
-      this.id = this.acRouter.snapshot.params.id;
-              }
+    private employeesService: EmployeesService,
+    private snackBar: MatSnackBar,
+    private router: Router) {
+    this.id = this.acRouter.snapshot.params.id;
+  }
 
   ngOnInit() {
     this.employeesService.getOneById(this.id)
@@ -34,13 +34,13 @@ export class EmployeeEditComponent implements OnInit {
 
   save() {
     this.employeesService.update(this.employee, this.id)
-    .subscribe(
-      (response) => {
-        this.snackBar.open('Poprawnie edytowano pracownika', 'Zamknij', {
-          duration: 2000,
-        });
-        this.router.navigate(['/employee']);
-      }
-    )
+      .subscribe(
+        (response) => {
+          this.snackBar.open('Poprawnie edytowano pracownika', 'Zamknij', {
+            duration: 2000,
+          });
+          this.router.navigate(['/employee']);
+        }
+      )
   }
 }
