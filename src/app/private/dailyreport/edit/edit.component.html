@@ -4,5 +4,31 @@
   </mat-card-header>
   <mat-card-content>
     <mat-form-field>
-      <input matInput #date='ngModel' [(ngModel)]=dailyreport.date>
+      <input matInput #date='ngModel' [(ngModel)]="dailyreport.date" name="date">
     </mat-form-field>
+    <table>
+      <tr>
+        <td>Nazwa Uwagi</td>
+        <td>Edytuj</td>
+        <td>Usun</td>
+      </tr>
+      <tr *ngIf="editNotesActive">
+        <td><input type="text" [(ngModel)]="editNotesText" name="editNotesText"></td>
+        <td>
+          <button (click)="saveNotes()">Zapisz</button>
+        </td>
+      </tr>
+      <tr *ngFor="let n of dailyreport.notes; let index = index">
+        <td>
+          {{n.notes}}
+        </td>
+        <td>
+          <a (click)="editNotes(n, index)">Edit</a>
+        </td>
+        <td>
+          <a (click)="deleteNotes(index)">U</a>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

@@ -9,17 +9,44 @@ import { DailyReportService } from '../dailyreport.service';
 })
 export class DailyreportEditComponent implements OnInit {
   id = '';
-  dailyreport = {};
+  dailyreport = {
+    notes: []
+  };
+  editNotesText = '';
+  editNotesActive = false;
+  whichNotesIsEdit = '';
+
   constructor(private DailyreportService: DailyReportService,
     private AcRouter: ActivatedRoute) { }
 
   ngOnInit() {
 
     this.id = this.AcRouter.snapshot.params.id;
-    this.DailyreportService.getOneById(this.id).subscribe(dailyreport => {
+    this.DailyreportService.getOneById(this.id).subscribe((dailyreport: any) => {
       this.dailyreport = dailyreport;
-      console.log('dailyreport', dailyreport)
-    })
+    });
+  }
+  editNotes(notes, index) {
+    this.editNotesText = notes.notes;
+    this.whichNotesIsEdit = index;
+    this.editNotesActive = true;
+  }
+
+  saveNotes() {
+    this.dailyreport.notes[this.whichNotesIsEdit].notes = this.editNotesText;
+    this.DailyreportService.update(this.dailyreport)
+      .subscribe((response) => {
+        alert('Poprawnie Edytowano');
+        this.editNotesActive = false;
+      });
+  }
+
+  deleteNotes(index) {
+    this.dailyreport.notes.splice(index, 1);
+    this.DailyreportService.update(this.dailyreport)
+      .subscribe((response) => {
+        alert('Poprawnie usunieto');
+      });
   }
 
 }
