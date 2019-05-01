@@ -14,7 +14,7 @@ dailyreportexpense = {
   price: ""
 };
   constructor(private dailyreportService: DailyReportService,
-    private snackBar: MatSnackBar,
+    // private snackBar: MatSnackBar,
     private router: Router) {}
 
   ngOnInit(): void {}
@@ -43,7 +43,7 @@ dailyreportexpense = {
               console.log('Zaktualizowano')
             })});
             this.router.navigate(['/dailyreport/list']);
-          
-      
-      
+
+
+
     }}
