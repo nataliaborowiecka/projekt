@@ -13,16 +13,37 @@ dailyreportexpense = {
   expense: "",
   price: ""
 };
-confirmed = false;
   constructor(private dailyreportService: DailyReportService,
     private snackBar: MatSnackBar,
     private router: Router) {}
 
   ngOnInit(): void {}
   save() {
-    this.dailyreportService.add(this.dailyreportexpense).subscribe(response => {
-      this.snackBar.open('Poprawnie dodano wydatek', 'Zamknij', {
-        duration: 2000,
-      });
-      this.router.navigate(['/dailyreport']);
-    })}}
+    const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-');
+    this.dailyreportService.getList()
+    .subscribe(
+      (list: any) => {
+        console.log('Dostales liste', list);
+        const dailyRaport = list.filter(obj => obj.date == today)[0];
+        console.log('Twoj daily raport to', dailyRaport);
+        if (dailyRaport.expenses) {
+          dailyRaport.expenses.push({
+            expenses: this.dailyreportexpense.expense
+          });
+        } else {
+          dailyRaport.expenses = [];
+          dailyRaport.expenses.push({
+            expenses: this.dailyreportexpense.expense
+          });
+        }
+        console.log('Aktualizacja obiektu');
+        this.dailyreportService.update(dailyRaport)
+          .subscribe(
+            (response) => {
+              console.log('Zaktualizowano')
+            })});
+            this.router.navigate(['/dailyreport/list']);
+          
+      
+      
+    }}

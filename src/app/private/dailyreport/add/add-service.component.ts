@@ -13,16 +13,37 @@ dailyreportservice = {
   service: "",
   cost: ""
 };
-confirmed = false;
   constructor(private dailyreportService: DailyReportService,
     private snackBar: MatSnackBar,
     private router: Router) {}
 
   ngOnInit(): void {}
   save() {
-    this.dailyreportService.add(this.dailyreportservice).subscribe(response => {
-      this.snackBar.open('Poprawnie dodano usługę', 'Zamknij', {
-        duration: 2000,
-      });
-      this.router.navigate(['/dailyreport']);
-    })}}
+    const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-');
+    this.dailyreportService.getList()
+    .subscribe(
+      (list: any) => {
+        console.log('Dostales liste', list);
+        const dailyRaport = list.filter(obj => obj.date == today)[0];
+        console.log('Twoj daily raport to', dailyRaport);
+        if (dailyRaport.service) {
+          dailyRaport.service.push({
+            service: this.dailyreportservice.service
+          });
+        } else {
+          dailyRaport.service = [];
+          dailyRaport.service.push({
+            service: this.dailyreportservice.service
+          });
+        }
+        console.log('Aktualizacja obiektu');
+        this.dailyreportService.update(dailyRaport)
+          .subscribe(
+            (response) => {
+              console.log('Zaktualizowano')
+            })});
+            this.router.navigate(['/app/dailyreport']);
+          
+      
+      
+    }}

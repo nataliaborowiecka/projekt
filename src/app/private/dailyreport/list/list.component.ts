@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dailyreport-list',
-  templateUrl: './dailyreport-list.component.html'
+  templateUrl: './dailyreport-list.component.html',
+  styleUrls: ['./dailyreport-list.scss']
 })
 export class DailyreportListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'date', 'notes', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service', 'action'];
   dataSource = [];
   constructor(private dailyRaport: DailyReportService) { }
 

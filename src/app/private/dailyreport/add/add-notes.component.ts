@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 })
 export class DailyreportAddNotesComponent implements OnInit {
   dailyreportnotes = {
-    notes: ''
+    notes: ""
   };
   constructor(private dailyreportService: DailyReportService,
     private snackBar: MatSnackBar,
@@ -40,7 +40,7 @@ export class DailyreportAddNotesComponent implements OnInit {
             .subscribe(
               (response) => {
                 console.log('Zaktualizowano')
-                // Przenosimy usera na liste daily raport
+                this.router.navigate(['/dailyreport'])
               }
             )
         }

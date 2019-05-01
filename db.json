@@ -178,6 +178,16 @@
     {
       "id": 42,
       "notes": ""
+    },
+    {
+      "name": "cwfe",
+      "surname": "fwf23d",
+      "id": 43
+    },
+    {
+      "name": "Pavle ",
+      "surname": "Konieczny",
+      "id": 44
     }
   ],
   "dailyreport": [
@@ -196,6 +206,64 @@
     {
       "date": "22-04-2019",
       "id": 2
+    },
+    {
+      "date": "24-04-2019",
+      "id": 3
+    },
+    {
+      "date": "24-04-2019",
+      "id": 4
+    },
+    {
+      "date": "24-04-2019",
+      "id": 5
+    },
+    {
+      "date": "01-05-2019",
+      "id": 6,
+      "notes": [
+        {
+          "notes": "vrevv"
+        },
+        {
+          "notes": "vdsjncknckjc"
+        },
+        {
+          "notes": ""
+        }
+      ],
+      "expenses": [
+        {
+          "expenses": ""
+        },
+        {
+          "expenses": ""
+        },
+        {
+          "expenses": ""
+        }
+      ],
+      "service": [
+        {
+          "service": ""
+        },
+        {
+          "service": ""
+        }
+      ]
+    },
+    {
+      "date": "01-05-2019",
+      "id": 7
+    },
+    {
+      "date": "01-05-2019",
+      "id": 8
+    },
+    {
+      "date": "01-05-2019",
+      "id": 9
     }
   ],
   "expense": [
@@ -230,6 +298,27 @@
       "employee": "",
       "usages": [],
       "id": 6
+    },
+    {
+      "date": "2019-04-24T10:27:18.852Z",
+      "employee": 3,
+      "usages": [],
+      "id": 7
+    },
+    {
+      "date": "2019-04-24T10:58:01.697Z",
+      "employee": 44,
+      "usages": [
+        {
+          "bleach": "04782939",
+          "dye": "0782783912"
+        },
+        {
+          "bleach": 0,
+          "dye": 0
+        }
+      ],
+      "id": 8
     }
   ]
 }
