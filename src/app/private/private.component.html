@@ -1,5 +1,6 @@
 <div class="body">
-  <div class="menu">
+  <mat-sidenav-container class="sidenav" >
+    <mat-sidenav mode="side" opened> <div class="menu">
     <mat-list role="list">
       <mat-list-item role="listitem" [routerLink]="['/app/employee']">Pracownicy</mat-list-item>
       <mat-divider></mat-divider>
@@ -21,12 +22,10 @@
       <mat-divider></mat-divider>
       <mat-list-item role="listitem" [routerLink]="['../public']">Wyloguj</mat-list-item>
     </mat-list>
-  </div>
+  </div></mat-sidenav>
+<mat-sidenav-content>
   <div class="content">
-    <div>
-      <p>App module glowny component</p>
-    </div>
-
+   </div>
     <router-outlet></router-outlet>
-  </div>
-</div>
+  </mat-sidenav-content>
+  </mat-sidenav-container>

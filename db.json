@@ -244,7 +244,7 @@
       ],
       "expenses": [
         {
-          "expense": "gvrw",
+          "expense": "bdjciow",
           "price": 2414,
           "expenses": "bjhkbk"
         }
@@ -271,6 +271,11 @@
       "name": "",
       "stock": 0,
       "id": 1
+    },
+    {
+      "name": "",
+      "stock": 0,
+      "id": 2
     }
   ],
   "usage": [
