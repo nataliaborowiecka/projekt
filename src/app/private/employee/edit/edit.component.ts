@@ -39,7 +39,7 @@ export class EmployeeEditComponent implements OnInit {
           this.snackBar.open('Poprawnie edytowano pracownika', 'Zamknij', {
             duration: 2000,
           });
-          this.router.navigate(['/employee']);
+          this.router.navigate(['/app/employee']);
         }
       )
   }

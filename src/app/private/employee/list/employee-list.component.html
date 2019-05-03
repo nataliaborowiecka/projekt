@@ -1,4 +1,7 @@
-<button mat-raised-button color="primary" [routerLink]="['./add']">Dodaj pracownika</button>
+
+<button id=add mat-fab color="" [routerLink]="['./add']" matTooltip="dodaj pracownika">
+<mat-icon>add</mat-icon>
+</button>
 <hr />
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
@@ -20,9 +23,10 @@
   </ng-container>
  
   <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Akcje</th>
+      <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
           <mat-icon (click)="delete(element)">delete</mat-icon>
+          <mat-icon [routerLink]="['./', element.id]" >edit</mat-icon>
       </td>
     </ng-container>
     

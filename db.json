@@ -1,81 +1,6 @@
 {
   "employees": [
     {
-      "id": 2,
-      "name": "Natalia",
-      "surname": "Borowiecka"
-    },
-    {
-      "id": 3,
-      "name": "Kuba",
-      "surname": "Wójcik"
-    },
-    {
-      "name": "eeee",
-      "surname": "wwww",
-      "id": 4
-    },
-    {
-      "name": "qew",
-      "surname": "qwe",
-      "id": 7
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 9
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 12
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 15
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 16
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 17
-    },
-    {
-      "name": "aebkdfq",
-      "surname": "bdhwqjdbq",
-      "id": 18
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 19
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 20
-    },
-    {
-      "name": "",
-      "surname": "",
-      "id": 21
-    },
-    {
       "name": "",
       "surname": "",
       "id": 22
@@ -84,16 +9,6 @@
       "name": "",
       "surname": "",
       "id": 23
-    },
-    {
-      "name": "Natalia",
-      "surname": "Borowiecka",
-      "id": 24
-    },
-    {
-      "name": "Natalia",
-      "surname": "Boroweicka",
-      "id": 25
     },
     {
       "name": "ewqe",
