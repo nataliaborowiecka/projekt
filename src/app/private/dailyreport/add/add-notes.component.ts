@@ -40,7 +40,7 @@ export class DailyreportAddNotesComponent implements OnInit {
             .subscribe(
               (response) => {
                 console.log('Zaktualizowano')
-                this.router.navigate(['/dailyreport'])
+                this.router.navigate(['/app/dailyreport'])
               }
             )
         }

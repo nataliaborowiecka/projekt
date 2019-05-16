@@ -24,6 +24,11 @@ export class DailyreportEditComponent implements OnInit {
   editServiceText = '';
   editServiceActive = false;
   whichServiceIsEdit = '';
+  displayedColumns = [
+    'notes',
+    'action'
+  ]
+  
   constructor(private DailyreportService: DailyReportService,
     private AcRouter: ActivatedRoute,
     private mattable: MatTableModule) { }

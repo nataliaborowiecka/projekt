@@ -16,10 +16,11 @@ export class DailyReportService {
   add(obj) {
     return this.httpClient.post('http://localhost:3000/dailyreport', obj);
   }
-  delete(dailyreport) {
-    return this.httpClient.delete('http://localhost:3000/dailyreport/' + dailyreport.id);
+  delete(element) {
+    return this.httpClient.delete('http://localhost:3000/dailyreport/' + element.id);
   }
   getOneById(id) {
     return this.httpClient.get('http://localhost:3000/dailyreport/' + id);
-  }
+  } 
 }
+
