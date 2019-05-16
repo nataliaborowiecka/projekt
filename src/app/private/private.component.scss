@@ -5,13 +5,10 @@
 .menu {
   width: 25%;
   float: left;
- 
 }
 .content {
   width: 75%;
   float: right;
-  color: aqua;
-  
 }
 .sidenav {
   position: absolute;
@@ -21,4 +18,11 @@
   right: 0;
   background: rgba(98, 64, 190, 0.432);
   height: 100%;
+
+}
+.list {
+  
+}
+.active {
+   color: rgb(131, 90, 207)
 }

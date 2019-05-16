@@ -75,7 +75,7 @@ export class UsageAddComponent implements OnInit {
       this.snackBar.open('Poprawnie dodano', 'Zamknij', {
         duration: 2000
       });
-      this.router.navigate(['/usage']);
+      this.router.navigate(['/app/usage']);
     });
   }
 }

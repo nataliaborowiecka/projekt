@@ -7,7 +7,7 @@ LOGIN
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input matInput placeholder="Hasło" name="password" [(ngModel)]="user.password" />
+        <input matInput placeholder="Hasło" name="password" type="password" [(ngModel)]="user.password" />
       </mat-form-field>
       <br />
       <p *ngIf="error">Zły login i hasło</p>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
 import { DailyReportService } from '../dailyreport.service';
+import {MatTableModule} from '@angular/material/table';
 @Component({
   selector: 'app-edit',
   templateUrl: './edit.component.html',
@@ -24,7 +25,8 @@ export class DailyreportEditComponent implements OnInit {
   editServiceActive = false;
   whichServiceIsEdit = '';
   constructor(private DailyreportService: DailyReportService,
-    private AcRouter: ActivatedRoute) { }
+    private AcRouter: ActivatedRoute,
+    private mattable: MatTableModule) { }
 
   ngOnInit() {
 

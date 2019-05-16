@@ -1,26 +1,26 @@
 <div class="body">
   <mat-sidenav-container class="sidenav" >
     <mat-sidenav mode="side" opened> <div class="menu">
-    <mat-list role="list">
-      <mat-list-item role="listitem" [routerLink]="['/app/employee']">Pracownicy</mat-list-item>
+    <mat-list role="list" class="list">
+      <mat-list-item role="listitem" [routerLink]="['/app/employee']" routerLinkActive="active">Pracownicy</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item role="listitem" [routerLink]="['/app/dailyreport']"
+      <mat-list-item role="listitem" [routerLink]="['/app/dailyreport']" routerLinkActive="active"
         >Raport dzienny</mat-list-item
       >
       <mat-divider></mat-divider>
-      <mat-list-item role="listitem" [routerLink]="['/app/usage']"
+      <mat-list-item role="listitem" [routerLink]="['/app/usage']" routerLinkActive="active"
         >Zużycie produktów
       </mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item role="listitem" [routerLink]="['/app/monthlyreport']"
+      <mat-list-item role="listitem" [routerLink]="['/app/monthlyreport']" routerLinkActive="active"
         >Raport miesieczny</mat-list-item
       >
       <mat-divider></mat-divider>
-      <mat-list-item role="listitem" [routerLink]="['/app/products']"
+      <mat-list-item role="listitem" [routerLink]="['/app/products']" routerLinkActive="active"
         >Produkty na stanie</mat-list-item
       >
       <mat-divider></mat-divider>
-      <mat-list-item role="listitem" [routerLink]="['../public']">Wyloguj</mat-list-item>
+      <mat-list-item role="listitem" [routerLink]="['/login']">Wyloguj</mat-list-item>
     </mat-list>
   </div></mat-sidenav>
 <mat-sidenav-content>

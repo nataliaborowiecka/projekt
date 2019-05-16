@@ -1,5 +1,6 @@
 import { DailyReportService } from './../dailyreport.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dailyreport-list',
@@ -9,26 +10,34 @@ import { Component, OnInit } from '@angular/core';
 export class DailyreportListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service', 'action'];
   dataSource = [];
-  constructor(private dailyRaport: DailyReportService) { }
+  constructor(private dailyReport: DailyReportService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.dailyRaport.getList()
+    this.dailyReport.getList()
       .subscribe(
-        (listOfDailyRaport: any) => {
-          this.dataSource = listOfDailyRaport;
+        (listOfDailyReport: any) => {
+          this.dataSource = listOfDailyReport;
         }
       )
   }
 
-  addDailyRaport() {
-    const dailyRaport = {
+  addDailyReport() {
+    const dailyReport = {
       date: new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-')
     };
-    this.dailyRaport.add(dailyRaport)
+    this.dailyReport.add(dailyReport)
       .subscribe(
         res => {
           console.log('Dodano daily raport');
         }
       )
   }
-}
+  delete(element) {
+    if (confirm('Czy napewno chcesz usunąć?')) {
+      this.dailyReport.delete(element)
+      .subscribe(
+        (response) => {
+          this.dataSource = this.dataSource.filter(dailyreport => dailyreport.id !== element.id);
+          this.router.navigate(['/app/dailyreport'])
+  })}}}

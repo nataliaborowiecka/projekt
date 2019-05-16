@@ -1,7 +1,7 @@
 import { EmployeesService } from './../employee.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTooltip } from '@angular/material';
+
  
 @Component({
   selector: 'app-list',
@@ -17,7 +17,6 @@ export class EmployeeListComponent implements OnInit {
 
   constructor(private employeesService: EmployeesService,
     private router:Router,
-    private tooltip: MatTooltip,
    ) { }
 
   ngOnInit() {

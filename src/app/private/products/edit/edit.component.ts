@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../products.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class ProductsEditComponent implements OnInit {
     stock: 0
   };
   constructor(private acRouter: ActivatedRoute,
-              private productsService: ProductsService) {
+              private productsService: ProductsService,
+              private router: Router) {
     this.id = this.acRouter.snapshot.params.id;
   }
 
@@ -32,6 +33,7 @@ export class ProductsEditComponent implements OnInit {
       .subscribe(
         (response: any) => {
           this.product = response;
+          this.router.navigate['/app/products']
         }
       )
   }

@@ -1,4 +1,5 @@
-<mat-card>
+<div class="enotes">
+<mat-card >
   <mat-card-header>
     <mat-card-title>Edytuj Uwagi</mat-card-title>
   </mat-card-header>
@@ -6,11 +7,16 @@
     <mat-form-field>
       <input matInput #date='ngModel' [(ngModel)]="dailyreport.date" name="date">
     </mat-form-field>
-    <table>
-      <tr>
-        <td>Nazwa Uwagi</td>
-        <td>Edytuj</td>
-        <td>Usun</td>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Uwaga </th>
+        <td mat-cell ></td> 
+      </ng-container>
+    </table> 
+      <!-- <tr>
+        <td>Uwaga</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr *ngIf="editNotesActive">
         <td><input type="text" [(ngModel)]="editNotesText" name="editNotesText"></td>
@@ -18,7 +24,7 @@
           <button (click)="saveNotes()">Zapisz</button>
         </td>
       </tr>
-      <tr *ngFor="let n of dailyreport.notes; let index = index">
+      <tr *ngFor="let n of dailyreport.notes; let index = index"> 
         <td>
           {{n.notes}}
         </td>
@@ -29,11 +35,13 @@
           <a (click)="deleteNotes(index)">U</a>
         </td>
       </tr>
-    </table>
+    </table> -->
   </mat-card-content>
 </mat-card>
-
-<mat-card>
+</div>
+<hr />
+<div id="eexpenses">
+<mat-card >
   <mat-card-header>
     <mat-card-title>Edytuj wydatki</mat-card-title>
   </mat-card-header>
@@ -64,7 +72,9 @@
     </table>
   </mat-card-content>
 </mat-card>
-
+</div>
+<hr />
+<div id="eservice">
 <mat-card>
   <mat-card-header>
     <mat-card-title>Edytuj usługi</mat-card-title>
@@ -96,3 +106,4 @@
     </table>
   </mat-card-content>
 </mat-card>
+</div>

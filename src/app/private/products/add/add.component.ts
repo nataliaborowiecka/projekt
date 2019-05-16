@@ -29,7 +29,7 @@ export class ProductsAddComponent implements OnInit {
           this.snackBar.open('Poprawnie dodano', 'Zamknij', {
             duration: 2000,
           });
-          this.router.navigate(['/products']);
+          this.router.navigate(['/app/products']);
         }
       )
   }
