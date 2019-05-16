@@ -24,7 +24,9 @@ export class DailyreportListComponent implements OnInit {
 
   addDailyReport() {
     const dailyReport = {
-      date: new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-')
+      date: new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-'),
+      month: new Date().getMonth(), 
+      year: new Date().getFullYear()
     };
     this.dailyReport.add(dailyReport)
       .subscribe(

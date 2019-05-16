@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="select">
+    <mat-form-field >
+    <mat-label>Miesiąc</mat-label>
+    <mat-select name="month" [(ngModel)]="monthlyreport.month">
+      <mat-option *ngFor="let month of months" [value]="month.value" >
+        {{month.viewValue}} 
+     </mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-form-field >
+      <mat-label>Rok</mat-label>
+      <mat-select name="year" [(ngModel)]="monthlyreport.year">
+        <mat-option *ngFor="let year of years" [value]="year.value" >
+          {{year.viewValue}} 
+       </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="search()" >Szukaj</button>
+  </div>
+</div>
+<app-report-list></app-report-list>

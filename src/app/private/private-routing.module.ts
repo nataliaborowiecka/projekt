@@ -13,8 +13,9 @@ import { UsageAddComponent } from './usage/add/add.component';
 import { EmployeeEditComponent } from './employee/edit/edit.component';
 import { DailyreportAddNotesComponent } from './dailyreport/add/add-notes.component';
 import { DailyreportAddExpensesComponent } from './dailyreport/add/add-expenses.component';
-import { MonthlyreportListComponent } from './monthlyreport/list/list.component';
+import { MonthlyreportListComponent } from './monthlyreport/list/monthlyreport-list.component';
 import { DailyreportEditComponent } from './dailyreport/edit/edit.component';
+import { ReportComponent } from './monthlyreport/reportlist/report.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,7 +23,11 @@ const routes: Routes = [
     children: [
 
       {
-        path: 'monthlyreport/list',
+        path: 'reportlist',
+        component: ReportComponent
+      },
+      {
+        path: 'monthlyreport',
         component: MonthlyreportListComponent
       },
       {

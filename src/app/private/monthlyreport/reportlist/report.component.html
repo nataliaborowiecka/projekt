@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="dataSource" class="table">
+     <ng-container matColumnDef="id">
+             <th mat-header-cell *matHeaderCellDef> id. </th>
+             
+    </ng-container>
+    <ng-container matColumnDef="notes">
+            <th mat-header-cell *matHeaderCellDef> Uwagi</th>
+            
+   </ng-container>
+   <ng-container matColumnDef="expenses">
+        <th mat-header-cell *matHeaderCellDef> Wydatki </th>
+        
+</ng-container>
+<ng-container matColumnDef="service">
+        <th mat-header-cell *matHeaderCellDef> Usługi </th>
+        
+</ng-container>
+<ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Akcje </th>
+        
+</ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

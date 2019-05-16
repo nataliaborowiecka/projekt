@@ -101,134 +101,18 @@
     }
   ],
   "dailyreport": [
+  
     {
-      "date": "22-04-2019",
-      "id": 2
-    },
-    {
-      "date": "24-04-2019",
-      "id": 5
-    },
-    {
-      "date": "01-05-2019",
-      "id": 6,
-      "notes": [
-        {
-          "notes": "34444fff"
-        }
-      ],
-      "service": [
-        {
-          "service": "fwqfq"
-        },
-        {
-          "service": "nvjdsolvnolsjbkkjk"
-        },
-        {
-          "service": "njcksnjka",
-          "cost": 532532
-        }
-      ],
-      "expenses": [
-        {
-          "expense": "bdjciow",
-          "price": 2414,
-          "expenses": "bjhkbk"
-        }
-      ]
-    },
-    {
-      "date": "01-05-2019",
-      "id": 7
-    },
-    {
-      "date": "01-05-2019",
-      "id": 8
-    },
-    {
-      "date": "03-05-2019",
-      "id": 10
-    },
-    {
-      "date": "03-05-2019",
-      "id": 11
-    },
-    {
-      "date": "03-05-2019",
-      "id": 12
-    },
-    {
-      "date": "03-05-2019",
-      "id": 13
-    },
-    {
-      "date": "03-05-2019",
-      "id": 14
-    },
-    {
-      "date": "03-05-2019",
-      "id": 15
-    },
-    {
-      "date": "03-05-2019",
-      "id": 16
-    },
-    {
-      "date": "09-05-2019",
-      "id": 17
-    },
-    {
-      "date": "09-05-2019",
-      "id": 18
-    },
-    {
-      "date": "09-05-2019",
-      "id": 19
-    },
-    {
-      "date": "09-05-2019",
-      "id": 20
-    },
-    {
-      "date": "12-05-2019",
-      "id": 21
-    },
-    {
-      "date": "13-05-2019",
-      "id": 22,
-      "service": [
-        {
-          "service": "ncsnlachln",
-          "cost": 21321
-        }
-      ],
-      "notes": [
-        {
-          "notes": "nvcjnewlcnwl"
-        },
-        {
-          "notes": "kencl"
-        },
-        {
-          "notes": "kxnl"
-        }
-      ],
-      "expenses": [
-        {
-          "expense": "cjsalcb labsl",
-          "price": 7329461982
-        }
-      ]
+      "date": "16-05-2019",
+      "month": 4,
+      "year": 2019,
+      "id": 24
     },
     {
       "date": "16-05-2019",
-      "id": 23,
-      "service": [
-        {
-          "service": "test",
-          "cost": 123
-        }
-      ]
+      "month": 4,
+      "year": 2019,
+      "id": 25
     }
   ],
   "expense": [
