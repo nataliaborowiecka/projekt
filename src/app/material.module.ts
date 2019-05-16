@@ -10,9 +10,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from "@angular/material";
 import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   exports: [MatSelectModule, MatIconModule, MatSnackBarModule, MatInputModule,
+    MatTooltipModule,
     MatButtonModule, MatListModule, MatTableModule, MatCardModule, MatDatepickerModule, MatNativeDateModule]
 })
 export class MaterialModule {}

@@ -28,16 +28,22 @@ export class DailyreportListComponent implements OnInit {
     };
     this.dailyReport.add(dailyReport)
       .subscribe(
-        res => {
-          console.log('Dodano daily raport');
+        (res: any) => {
+          this.dataSource = [...this.dataSource, {
+            date: dailyReport.date,
+            id: res.id
+          }];
         }
-      )
+      );
   }
   delete(element) {
     if (confirm('Czy napewno chcesz usunąć?')) {
       this.dailyReport.delete(element)
-      .subscribe(
-        (response) => {
-          this.dataSource = this.dataSource.filter(dailyreport => dailyreport.id !== element.id);
-          this.router.navigate(['/app/dailyreport'])
-  })}}}
+        .subscribe(
+          (response) => {
+            this.dataSource = this.dataSource.filter(dailyreport => dailyreport.id !== element.id);
+            this.router.navigate(['/app/dailyreport'])
+          })
+    }
+  }
+}
