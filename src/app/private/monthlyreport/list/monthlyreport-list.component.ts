@@ -19,6 +19,8 @@ export interface year {
 export class MonthlyreportListComponent                         
 
  {
+   // KROK 1
+   // Tutaj powstala zmienna reports / aby potem mozna bylo jej uzywac w pliku html
    reports = [];
   monthlyreport = {
     month: 0,
@@ -48,8 +50,10 @@ export class MonthlyreportListComponent
   search() {
     console.log(this.monthlyreport,)
     this.monthlyreportservice.get(this.monthlyreport.month, this.monthlyreport.year).subscribe((downloadedReports: any) => {
+      // KROK 2
+      // Tutaj do naszej zmiennej z kroku 1 przypisujemy to co sobie pobieramy ;-) 
       this.reports = downloadedReports;
-    })
+    });
 
   }
 }
