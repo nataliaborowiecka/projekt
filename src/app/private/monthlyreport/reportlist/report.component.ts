@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DailyreportAddExpensesComponent } from '../../dailyreport/add/add-expenses.component';
 
 @Component({
     selector: 'app-report-list',
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
   export class ReportComponent  {
     displayedColumns: string[] = ['id', 'notes', 'expenses', 'service', 'action'];
     dataSource = [];
+    @Input() expenses:DailyreportAddExpensesComponent[]
   }  
