@@ -1,8 +1,8 @@
 {
   "employees": [
     {
-      "name": "",
-      "surname": "",
+      "name": "grr3",
+      "surname": "greg",
       "id": 23
     },
     {
@@ -95,13 +95,22 @@
       "id": 43
     },
     {
-      "name": "Pavle ",
-      "surname": "Konieczny",
-      "id": 44
+      "name": "hghregw",
+      "surname": "gvrfsvrgbw",
+      "id": 45
+    },
+    {
+      "name": "ngc",
+      "surname": "ngdcn",
+      "id": 46
+    },
+    {
+      "name": "gtrgw",
+      "surname": "fre42tf342",
+      "id": 47
     }
   ],
   "dailyreport": [
-  
     {
       "date": "16-05-2019",
       "month": 4,
@@ -109,10 +118,22 @@
       "id": 24
     },
     {
-      "date": "16-05-2019",
+      "date": "18-05-2019",
       "month": 4,
       "year": 2019,
-      "id": 25
+      "id": 26,
+      "service": [
+        {
+          "service": "bfbfe",
+          "cost": 53643
+        }
+      ],
+      "expenses": [
+        {
+          "expense": "bfdvbd",
+          "price": 54253
+        }
+      ]
     }
   ],
   "expense": [
@@ -135,21 +156,6 @@
     }
   ],
   "usage": [
-    {
-      "date": "2019-05-13T15:10:29.578Z",
-      "employee": 26,
-      "usages": [
-        {
-          "bleach": 0,
-          "dye": 0
-        },
-        {
-          "bleach": 0,
-          "dye": 0
-        }
-      ],
-      "id": 1
-    },
     {
       "date": "2019-05-13T15:12:49.640Z",
       "employee": 29,

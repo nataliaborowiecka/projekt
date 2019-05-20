@@ -25,7 +25,7 @@ export class EmployeeAddComponent implements OnInit {
       this.snackBar.open('Poprawnie dodano pracownika', 'Zamknij', {
         duration: 2000,
       });
-      this.router.navigate(['/employee']);
+      this.router.navigate(['/app/employee']);
       
     });
   }
