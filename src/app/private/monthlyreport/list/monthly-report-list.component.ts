@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MonthlyReportService } from '../monthlyreport.service';
+import { MonthlyReportService } from '../monthly-report.service';
 
 export interface month {
   value: string;
@@ -10,15 +10,13 @@ export interface year {
   value: string;
   viewValue: string;
 }
-  
+
 @Component({
   selector: 'app-list',
-  templateUrl: './monthlyreport-list.component.html',
-  styleUrls: ['./list.component.scss']
+  templateUrl: './monthly-report-list.component.html',
+  styleUrls: ['./monthly-report-list.component.scss']
 })
-export class MonthlyreportListComponent                         
-
- {
+export class MonthlyreportListComponent{
    // KROK 1
    // Tutaj powstala zmienna reports / aby potem mozna bylo jej uzywac w pliku html
    reports = [];
@@ -49,7 +47,8 @@ export class MonthlyreportListComponent
 
   search() {
     console.log(this.monthlyreport,)
-    this.monthlyreportservice.get(this.monthlyreport.month, this.monthlyreport.year).subscribe((downloadedReports: any) => {
+    this.monthlyreportservice.get(this.monthlyreport.month, this.monthlyreport.year).
+    subscribe((downloadedReports: any) => {
       // KROK 2
       // Tutaj do naszej zmiennej z kroku 1 przypisujemy to co sobie pobieramy ;-) 
       this.reports = downloadedReports;

@@ -1,11 +1,11 @@
-import { DailyReportService } from '../dailyreport.service';
+import { DailyReportService } from '../daily-report.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-dailyreport-add_notes',
-  templateUrl: './add-notes.component.html'
+  selector: 'app-daily-report-add_notes',
+  templateUrl: './daily-report-add-notes.component.html'
 })
 export class DailyreportAddNotesComponent implements OnInit {
   dailyreportnotes = {

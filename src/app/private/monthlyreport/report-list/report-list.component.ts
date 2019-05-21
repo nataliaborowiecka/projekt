@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { DailyreportAddExpensesComponent } from '../../dailyreport/add/add-expenses.component';
+import { DailyreportAddExpensesComponent } from '../../dailyreport/add/daily-report-add-expenses.component';
 
 @Component({
     selector: 'app-report-list',
-    templateUrl: './report.component.html',
+    templateUrl: './report-list.component.html',
     styleUrls: ['./report-list.component.scss']
   })
   export class ReportComponent {

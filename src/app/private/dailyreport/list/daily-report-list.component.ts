@@ -1,11 +1,11 @@
-import { DailyReportService } from './../dailyreport.service';
+import { DailyReportService } from './../daily-report.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dailyreport-list',
-  templateUrl: './dailyreport-list.component.html',
-  styleUrls: ['./dailyreport-list.scss']
+  templateUrl: './daily-report-list.component.html',
+  styleUrls: ['./daily-report-list.scss']
 })
 export class DailyreportListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service', 'action'];

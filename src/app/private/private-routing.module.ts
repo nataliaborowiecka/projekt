@@ -1,21 +1,21 @@
 import { PrivateComponent } from './private.component';
-import { EmployeeListComponent } from './employee/list/list.component';
+import { EmployeeListComponent } from './employee/list/employee-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmployeeAddComponent } from './employee/add/add.component';
-import { DailyreportAddServiceComponent } from './dailyreport/add/add-service.component';
-import { DailyreportListComponent } from './dailyreport/list/list.component';
+import { EmployeeAddComponent } from './employee/add/employee-add.component';
+import { DailyreportAddServiceComponent } from './dailyreport/add/daily-report-add-service.component';
+import { DailyreportListComponent } from './dailyreport/list/daily-report-list.component';
 import { ProductsListComponent } from './products/list/list.component';
 import { ProductsAddComponent } from './products/add/add.component';
 import { ProductsEditComponent } from './products/edit/edit.component';
 import { UsageListComponent } from './usage/list/list.component';
 import { UsageAddComponent } from './usage/add/add.component';
 import { EmployeeEditComponent } from './employee/edit/edit.component';
-import { DailyreportAddNotesComponent } from './dailyreport/add/add-notes.component';
-import { DailyreportAddExpensesComponent } from './dailyreport/add/add-expenses.component';
-import { MonthlyreportListComponent } from './monthlyreport/list/monthlyreport-list.component';
+import { DailyreportAddNotesComponent } from './dailyreport/add/daily-report-add-notes.component';
+import { DailyreportAddExpensesComponent } from './dailyreport/add/daily-report-add-expenses.component';
+import { MonthlyreportListComponent } from './monthlyreport/list/monthly-report-list.component';
 import { DailyreportEditComponent } from './dailyreport/edit/edit.component';
-import { ReportComponent } from './monthlyreport/reportlist/report.component';
+import { ReportComponent } from './monthlyreport/report-list/report-list.component';
 const routes: Routes = [
   {
     path: '',

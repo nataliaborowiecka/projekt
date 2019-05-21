@@ -1,7 +1,7 @@
 import { MaterialModule } from './../../material.module';
-import { EmployeeAddComponent } from './add/add.component';
+import { EmployeeAddComponent } from './add/employee-add.component';
 import { RouterModule } from '@angular/router';
-import { EmployeeListComponent } from './list/list.component';
+import { EmployeeListComponent } from './list/employee-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';

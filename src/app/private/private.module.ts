@@ -1,8 +1,8 @@
 import { UsageModule } from './usage/usage.module';
 import { ProductsModule } from './products/products.module';
-import { MonthlyreportModule } from './monthlyreport/monthlyreport.module';
+import { MonthlyreportModule } from './monthlyreport/monthly-report.module';
 import { EmployeeModule } from './employee/employee.module';
-import { DailyreportModule } from './dailyreport/dailyreport.module';
+import { DailyreportModule } from './dailyreport/daily-report.module';
 import { EmployeesService } from './employee/employee.service';
 import { PrivateRoutingModule } from './private-routing.module';
 import { MaterialModule } from './../material.module';

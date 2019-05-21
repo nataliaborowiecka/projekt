@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
-import { DailyReportService } from '../dailyreport.service';
+import { DailyReportService } from '../daily-report.service';
 import {MatTableModule} from '@angular/material/table';
 @Component({
   selector: 'app-edit',
