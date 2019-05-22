@@ -1,27 +1,4 @@
-<!--Krok ostatni-->
-<!--Tutaj dalem [dataSource] / reports // czyli uwaga - to co dostalem w input-->
-<!-- <table mat-table [dataSource]="reports" class="table">
-     <ng-container matColumnDef="id">
-             <th mat-header-cell *matHeaderCellDef> id. </th> 
-     </ng-container>
-    <ng-container matColumnDef="notes">
-            <th mat-header-cell *matHeaderCellDef> Uwagi</th>
-   </ng-container>
-   <ng-container matColumnDef="expenses">
-        <th mat-header-cell *matHeaderCellDef> Wydatki </th>
-        
-</ng-container>
-<ng-container matColumnDef="service">
-        <th mat-header-cell *matHeaderCellDef> Usługi </th>
-        
-</ng-container>
-<ng-container matColumnDef="action">
-        <th mat-header-cell *matHeaderCellDef> Akcje </th>
-        
-</ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table> -->
+Wydatki w tym miesiącu: {{globalService}} <br />
 <table mat-table [dataSource]="reports" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>id</th>
@@ -46,26 +23,23 @@
         <ng-container matColumnDef="expenses">
           <th mat-header-cell *matHeaderCellDef>Wydatki</th>
           <td mat-cell *matCellDef="let element">
-                <ul>
-                        <li *ngFor="let n of element.expenses">
-                         {{n.expense}} - {{ n.price }}
-                        </li>
-                </ul>
+              {{element.serviceSum}}
           </td>
         </ng-container>
         <ng-container matColumnDef="service">
-                <th mat-header-cell *matHeaderCellDef>Usługi</th>
-                <td mat-cell *matCellDef="let element">
-                 <ul>
-                        <li *ngFor="let n of element.service">
-                         {{n.service}} - {{n.cost}}
-                         </li>
-                 </ul>
-                </td>
-              </ng-container>
+          <th mat-header-cell *matHeaderCellDef>Usługi</th>
+            <td mat-cell *matCellDef="let element">
+              {{element.expenceSum}}
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="sum">
+          <th mat-header-cell *matHeaderCellDef>Suma</th>
+          <td mat-cell *matCellDef="let element">
+            {{element.serviceSum - element.expenceSum}}
+          </td>
+        </ng-container>
           
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
-      

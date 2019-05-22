@@ -112,12 +112,6 @@
   ],
   "dailyreport": [
     {
-      "date": "16-05-2019",
-      "month": 4,
-      "year": 2019,
-      "id": 24
-    },
-    {
       "date": "18-05-2019",
       "month": 4,
       "year": 2019,
@@ -125,27 +119,45 @@
       "service": [
         {
           "service": "bfbfe",
-          "cost": 53643
+          "cost": 100
         }
       ],
       "expenses": [
         {
           "expense": "bfdvbd",
-          "price": 54253
+          "price": 23
         }
       ]
     },
     {
-      "date": "20-05-2019",
+      "date": "22-05-2019",
       "month": 4,
       "year": 2019,
-      "id": 27
-    },
-    {
-      "date": "20-05-2019",
-      "month": 4,
-      "year": 2019,
-      "id": 28
+      "id": 29,
+      "expenses": [
+        {
+          "expense": "e",
+          "price": 12
+        },
+        {
+          "expense": "asdasd",
+          "price": 222
+        },
+        {
+          "expense": "fff",
+          "price": 12
+        }
+      ],
+      "service": [
+        {
+          "service": "fff",
+          "cost": 1000
+        },
+        {
+          "service": "xx",
+          "cost": 100
+        }
+      ]
     }
   ],
   "expense": [

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { DailyreportAddExpensesComponent } from '../../dailyreport/add/daily-report-add-expenses.component';
 
 @Component({
@@ -6,13 +6,31 @@ import { DailyreportAddExpensesComponent } from '../../dailyreport/add/daily-rep
     templateUrl: './report-list.component.html',
     styleUrls: ['./report-list.component.scss']
   })
-  export class ReportComponent {
-  displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service'];
+  export class ReportComponent implements OnInit{
+  displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service', 'sum'];
   dataSource = [];
-  // Krok 4
-  // Tutaj mowie Ze ktos <parent> przekazal mi zmienna reports i chce jej uzywac w tym komponencie.
+  globalService = 0;
   @Input() reports;
 
   constructor() {
+  }
+
+  ngOnInit(): void {
+    console.log('Reports', this.reports);
+
+    this.reports = this.reports.map( (report) => {
+      report.serviceSum = 0;
+      for (let i = 0; i < report.service.length; i++) {
+        report.serviceSum += report.service[i].cost;
+      }
+      this.globalService += report.serviceSum;
+
+      report.expenceSum = 0;
+      console.log('x', this.globalService);
+      for (let i = 0; i < report.expenses.length; i++) {
+        report.expenceSum += report.expenses[i].price;
+      }
+      return report;
+    });
   }
 }

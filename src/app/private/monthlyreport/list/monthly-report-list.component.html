@@ -22,4 +22,4 @@
 <!--Krok 3-->
 <!--Tutaj dodalem [reports]="reports" // czyli mowie ze w tym componencie bedzie mozna uzywac zmiennej @input Reports-->
 <!--Co jest w tej zmiennej juz ustawilem w kroku 2-->
-<app-report-list [reports]="reports"></app-report-list>
+<app-report-list *ngIf="reports.length > 0" [reports]="reports"></app-report-list>
