@@ -1,8 +1,8 @@
 <div id=buttons>
 <button mat-raised-button color="" (click)="addDailyReport()">Dodaj Raport Dzienny</button>
-<button mat-raised-button color="primary" [routerLink]="['./addservice']">Dodaj usługę</button>
-<button mat-raised-button [routerLink]="['./addexpenses']">Dodaj wydatki </button>
-<button mat-raised-button color="primary" [routerLink]="['./addnotes']">Dodaj uwagi</button>
+<button mat-raised-button color="primary" [routerLink]="['/app/dailyreport/addservice']">Dodaj usługę</button>
+<button mat-raised-button [routerLink]="['/app/dailyreport/addexpenses']">Dodaj wydatki </button>
+<button mat-raised-button color="primary" [routerLink]="['/app/dailyreport/addnotes']">Dodaj uwagi</button>
 </div>
 <table mat-table [dataSource]="dataSource" class="tab">
   <ng-container matColumnDef="id">
