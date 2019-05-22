@@ -1,3 +1,21 @@
+zadania domowe
+1.logowanie enter.
+2.monthlyreport formularz na górze
+3.monthlyreport domyślny miesiąc i rok
+4.interface
+5.walidacja- usage
+6. usage dokończyć
+
+
+
+
+
+
+
+
+
+
+
 1. Moduły
 2. Componenty // mała funkcjonalnosc
 3. Serwis

@@ -10,6 +10,7 @@ import { DailyreportAddExpensesComponent } from '../../dailyreport/add/daily-rep
   displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service', 'sum'];
   dataSource = [];
   globalService = 0;
+  globalExpenses = 0;
   @Input() reports;
 
   constructor() {
@@ -24,12 +25,14 @@ import { DailyreportAddExpensesComponent } from '../../dailyreport/add/daily-rep
         report.serviceSum += report.service[i].cost;
       }
       this.globalService += report.serviceSum;
-
+      
       report.expenceSum = 0;
       console.log('x', this.globalService);
       for (let i = 0; i < report.expenses.length; i++) {
         report.expenceSum += report.expenses[i].price;
-      }
+        }
+        this.globalExpenses += report.expenceSum;
+        console.log('y', this.globalExpenses);
       return report;
     });
   }

@@ -1,4 +1,6 @@
 Wydatki w tym miesiącu: {{globalService}} <br />
+Utarg w tym miesiącu: {{globalExpenses}} <br />
+Zysk w tym miesiącu: {{ globalExpenses - globalService }} <br />
 <table mat-table [dataSource]="reports" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>id</th>
@@ -35,7 +37,7 @@ Wydatki w tym miesiącu: {{globalService}} <br />
         <ng-container matColumnDef="sum">
           <th mat-header-cell *matHeaderCellDef>Suma</th>
           <td mat-cell *matCellDef="let element">
-            {{element.serviceSum - element.expenceSum}}
+            {{element.expenceSum - element.serviceSum}}
           </td>
         </ng-container>
           

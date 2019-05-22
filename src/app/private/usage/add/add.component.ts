@@ -10,8 +10,10 @@ import {EmployeesService} from "../../employee/employee.service";
 export class UsageAddComponent implements OnInit {
   usage = {
     date: new Date(),
-    employee: '',
-    usages: []
+    employee: {},
+    usages: [],
+    bleachSum: 0,
+    dyeSum: 0,
   };
   usageTmp = {
     bleach: 0,
@@ -70,7 +72,8 @@ export class UsageAddComponent implements OnInit {
   }
 
   save() {
-    
+    this.usage.bleachSum = this.sumBleach();
+    this.usage.dyeSum = this.sumDye();
     this.usageService.add(this.usage).subscribe(response => {
       this.snackBar.open('Poprawnie dodano', 'Zamknij', {
         duration: 2000

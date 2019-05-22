@@ -181,10 +181,21 @@
   ],
   "usage": [
     {
-      "date": "2019-05-13T15:12:49.640Z",
-      "employee": 29,
-      "usages": [],
-      "id": 2
+      "date": "2019-05-22T14:22:37.293Z",
+      "employee": {
+        "name": "grr3",
+        "surname": "greg",
+        "id": 23
+      },
+      "usages": [
+        {
+          "bleach": 0,
+          "dye": 0
+        }
+      ],
+      "bleachSum": 0,
+      "dyeSum": 0,
+      "id": 1
     }
   ]
 }

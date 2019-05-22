@@ -13,7 +13,7 @@
       <mat-form-field>
         <mat-label>Pracownicy</mat-label>
         <mat-select [(ngModel)]="usage.employee" name="employee">
-          <mat-option *ngFor="let employee of employees" [value]="employee.id">
+          <mat-option *ngFor="let employee of employees" [value]="employee">
             {{employee.name}} {{employee.surname}}
           </mat-option>
         </mat-select>
@@ -22,10 +22,10 @@
       <button mat-fab color="primary" (click)="add()">Dodaj</button>
       <div *ngIf="addNewLine">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Rozjaśniacz" name="bleach" [(ngModel)]="usageTmp.bleach">
+          <input matInput placeholder="Rozjaśniacz" name="bleach" type="number" [(ngModel)]="usageTmp.bleach">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Farba" name="dye" [(ngModel)]="usageTmp.dye">
+          <input matInput placeholder="Farba" name="dye" type="number" [(ngModel)]="usageTmp.dye">
         </mat-form-field>
         <button mat-raised-button color="primary" (click)="saveLine()">Dodaj</button>
       </div>

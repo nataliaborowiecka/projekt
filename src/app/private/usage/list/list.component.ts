@@ -14,6 +14,7 @@ export class UsageListComponent implements OnInit {
 
   ngOnInit() {
     this.usageService.getList().subscribe((usage: any) => {
+     
       this.dataSource = usage;
     });
   }
