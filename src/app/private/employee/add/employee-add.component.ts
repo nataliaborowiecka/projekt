@@ -2,15 +2,17 @@ import { EmployeesService } from '../employee.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router'
+import {Exmployee} from '../exmployee';
 @Component({
   selector: 'app-employee-add',
   templateUrl: './employee-add.component.html',
   styleUrls: ['./employee-add.employee.scss']
 })
 export class EmployeeAddComponent implements OnInit {
-  employee = {
+  employee: Exmployee = {
     name: '',
-    surname: ''
+    surname: '',
+    id: null
   };
   confirmed = false;
 
