@@ -1,13 +1,11 @@
 <!--Krok ostatni-->
 <!--Tutaj dalem [dataSource] / reports // czyli uwaga - to co dostalem w input-->
-<table mat-table [dataSource]="reports" class="table">
+<!-- <table mat-table [dataSource]="reports" class="table">
      <ng-container matColumnDef="id">
-             <th mat-header-cell *matHeaderCellDef> id. </th>
-             
-    </ng-container>
+             <th mat-header-cell *matHeaderCellDef> id. </th> 
+     </ng-container>
     <ng-container matColumnDef="notes">
             <th mat-header-cell *matHeaderCellDef> Uwagi</th>
-            <td mat-cell *matCellDef ></td>
    </ng-container>
    <ng-container matColumnDef="expenses">
         <th mat-header-cell *matHeaderCellDef> Wydatki </th>
@@ -23,4 +21,59 @@
 </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+</table> -->
+<table mat-table [dataSource]="reports" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>id</th>
+          <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        </ng-container>
+       
+        <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef>Date</th>
+                        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+                      </ng-container>
+      
+        <ng-container matColumnDef="notes">
+          <th mat-header-cell *matHeaderCellDef >Uwagi</th>
+          <td mat-cell *matCellDef="let element">
+         <ul>
+        <li *ngFor="let n of element.notes">
+        {{n.notes}}
+        </li>
+        </ul></td>
+        </ng-container>
+      
+        <ng-container matColumnDef="expenses">
+          <th mat-header-cell *matHeaderCellDef>Wydatki</th>
+          <td mat-cell *matCellDef="let element">
+                <ul>
+                        <li *ngFor="let n of element.expenses">
+                         {{n.expense}} - {{ n.price }}
+                        </li>
+                </ul>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="service">
+                <th mat-header-cell *matHeaderCellDef>Usługi</th>
+                <td mat-cell *matCellDef="let element">
+                 <ul>
+                        <li *ngFor="let n of element.service">
+                         {{n.service}} - {{n.cost}}
+                         </li>
+                 </ul>
+                </td>
+              </ng-container>
+       
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Akcje</th>
+            <td mat-cell *matCellDef="let element">
+                <!-- <mat-icon (click)="delete(element)" matTooltip="Usuń" >delete</mat-icon> -->
+                <mat-icon [routerLink]="['./', element.id]" matTooltip="Edytuj" >edit</mat-icon>
+            </td>
+          </ng-container>
+          
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      

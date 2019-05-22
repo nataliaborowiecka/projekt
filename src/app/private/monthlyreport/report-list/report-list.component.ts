@@ -7,7 +7,7 @@ import { DailyreportAddExpensesComponent } from '../../dailyreport/add/daily-rep
     styleUrls: ['./report-list.component.scss']
   })
   export class ReportComponent {
-  displayedColumns: string[] = ['id', 'notes', 'expenses', 'service', 'action'];
+  displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service'];
   dataSource = [];
   // Krok 4
   // Tutaj mowie Ze ktos <parent> przekazal mi zmienna reports i chce jej uzywac w tym komponencie.
