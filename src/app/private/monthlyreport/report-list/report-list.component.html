@@ -63,14 +63,6 @@
                  </ul>
                 </td>
               </ng-container>
-       
-        <ng-container matColumnDef="action">
-            <th mat-header-cell *matHeaderCellDef>Akcje</th>
-            <td mat-cell *matCellDef="let element">
-                <!-- <mat-icon (click)="delete(element)" matTooltip="Usuń" >delete</mat-icon> -->
-                <mat-icon [routerLink]="['./', element.id]" matTooltip="Edytuj" >edit</mat-icon>
-            </td>
-          </ng-container>
           
       
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
