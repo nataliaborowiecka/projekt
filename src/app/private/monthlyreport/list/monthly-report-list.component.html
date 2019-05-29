@@ -1,5 +1,6 @@
 <div class="container">
   <div class="select">
+    <mat-card class="card">
     <mat-form-field >
     <mat-label>Miesiąc</mat-label>
     <mat-select name="month" [(ngModel)]="monthlyreport.month">
@@ -17,6 +18,7 @@
       </mat-select>
     </mat-form-field>
     <button mat-button (click)="search()" >Szukaj</button>
+  </mat-card>
   </div>
 </div>
 <!--Krok 3-->

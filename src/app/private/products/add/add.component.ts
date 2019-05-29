@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Product } from '../products';
 
 @Component({
   selector: 'app-add',
@@ -9,8 +10,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./add.component.scss']
 })
 export class ProductsAddComponent implements OnInit {
-  id = undefined;
-  product = {
+  product: Product= {
+    id: undefined,
     name: '',
     stock: 0
   };

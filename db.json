@@ -169,14 +169,14 @@
   ],
   "products": [
     {
-      "name": "hucoai",
-      "stock": 543,
-      "id": 2
-    },
-    {
-      "name": "hwhfiw",
+      "name": "hwhwsdqcsac",
       "stock": 342,
       "id": 4
+    },
+    {
+      "name": "b cidhwudoqw",
+      "stock": 3432,
+      "id": 5
     }
   ],
   "usage": [
@@ -196,6 +196,54 @@
       "bleachSum": 0,
       "dyeSum": 0,
       "id": 1
+    },
+    {
+      "date": "2019-05-28T22:18:51.918Z",
+      "employee": {},
+      "usages": [
+        {
+          "bleach": 0,
+          "dye": 433
+        },
+        {
+          "bleach": 4224,
+          "dye": 0
+        }
+      ],
+      "bleachSum": 4224,
+      "dyeSum": 433,
+      "id": 2
+    },
+    {
+      "date": "2019-05-28T23:02:04.587Z",
+      "employee": {},
+      "usages": [],
+      "bleachSum": 0,
+      "dyeSum": 0,
+      "id": 3
+    },
+    {
+      "date": "2019-05-28T23:20:54.325Z",
+      "employee": {},
+      "usages": [
+        {
+          "bleach": 0,
+          "dye": 0,
+          "water": 3231,
+          "olaplex": 312
+        },
+        {
+          "bleach": 0,
+          "dye": 0,
+          "olaplex": 321,
+          "water": 321
+        }
+      ],
+      "bleachSum": 0,
+      "dyeSum": 0,
+      "waterSum": 3552,
+      "olaplexSum": 633,
+      "id": 4
     }
   ]
 }

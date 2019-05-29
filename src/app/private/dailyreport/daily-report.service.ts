@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {  DailyReportNotes, DailyReportExpenses, DailyReportServices } from './daily-report'
 @Injectable({
   providedIn: 'root'
 })

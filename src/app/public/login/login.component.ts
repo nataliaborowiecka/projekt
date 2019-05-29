@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       // ,}{
       console.log('login', this.user.login);
       console.log('password', this.user.password);
-    }
-  }
+    }}
 }
+
+

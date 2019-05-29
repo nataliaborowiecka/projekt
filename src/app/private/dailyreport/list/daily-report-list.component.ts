@@ -28,7 +28,7 @@ export class DailyreportListComponent implements OnInit {
       month: new Date().getMonth(), 
       year: new Date().getFullYear()
     };
-    this.dailyReport.add(dailyReport)
+    this.dailyReport.add({ obj: { obj: dailyReport } })
       .subscribe(
         (res: any) => {
           this.dataSource = [...this.dataSource, {

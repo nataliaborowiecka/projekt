@@ -48,7 +48,7 @@ export class DailyreportEditComponent implements OnInit {
 
   saveNotes() {
     this.dailyreport.notes[this.whichNotesIsEdit].notes = this.editNotesText;
-    this.DailyreportService.update(this.dailyreport)
+    this.DailyreportService.update({ obj: this.dailyreport })
       .subscribe((response) => {
         alert('Poprawnie Edytowano');
         this.editNotesActive = false;
@@ -57,7 +57,7 @@ export class DailyreportEditComponent implements OnInit {
 
   deleteNotes(index) {
     this.dailyreport.notes.splice(index, 1);
-    this.DailyreportService.update(this.dailyreport)
+    this.DailyreportService.update({ obj: this.dailyreport })
       .subscribe((response) => {
         alert('Poprawnie usunieto');
       });
@@ -70,7 +70,7 @@ export class DailyreportEditComponent implements OnInit {
 
   saveExpenses() {
     this.dailyreport.expenses[this.whihExpensesIsEdit].expense = this.editExpensesText;
-    this.DailyreportService.update(this.dailyreport)
+    this.DailyreportService.update({ obj: this.dailyreport })
       .subscribe((response) => {
         alert('Poprawnie edytowano');
         this.editExpensesActive = false;
@@ -79,7 +79,7 @@ export class DailyreportEditComponent implements OnInit {
 
   deleteExpenses(index) {
     this.dailyreport.expenses.splice(index, 1);
-    this.DailyreportService.update(this.dailyreport)
+    this.DailyreportService.update({ obj: this.dailyreport })
       .subscribe((reponse) => {
         alert('Poprawnie usunięto');
       });
@@ -92,7 +92,7 @@ export class DailyreportEditComponent implements OnInit {
 
   saveService() {
     this.dailyreport.service[this.whichServiceIsEdit].service = this.editServiceText;
-    this.DailyreportService.update(this.dailyreport)
+    this.DailyreportService.update({ obj: this.dailyreport })
       .subscribe((response) => {
         alert('Poprawnie edytowano');
         this.editServiceActive = false;
@@ -101,7 +101,7 @@ export class DailyreportEditComponent implements OnInit {
 
   deleteService(index) {
     this.dailyreport.service.splice(index, 1);
-    this.DailyreportService.update(this.dailyreport)
+    this.DailyreportService.update({ obj: this.dailyreport })
       .subscribe((reponse) => {
         alert('Poprawnie usunięto');
       });

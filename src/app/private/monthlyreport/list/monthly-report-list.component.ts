@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MonthlyReportService } from '../monthly-report.service';
+import { MonthlyReport } from '../monthly-report';
 
 export interface month {
   value: string;
@@ -20,7 +21,7 @@ export class MonthlyreportListComponent{
    // KROK 1
    // Tutaj powstala zmienna reports / aby potem mozna bylo jej uzywac w pliku html
    reports = [];
-  monthlyreport = {
+  monthlyreport: MonthlyReport = {
     month: 0,
     year: 2019
   };

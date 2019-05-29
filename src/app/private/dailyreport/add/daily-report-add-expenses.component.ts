@@ -2,15 +2,18 @@ import { DailyReportService } from '../daily-report.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router'
+import { DailyReportExpenses } from '../daily-report';
+
 
 @Component({
   selector: 'app-dailyreport-add-expenses',
   templateUrl: './daily-report-add-expenses.component.html'
 })
 export class DailyreportAddExpensesComponent implements OnInit {
-  dailyreport = {
+  dailyreport: DailyReportExpenses= {
+    id: '',
     expense: '',
-    price: ''
+    price: 0,
   };
   constructor(private dailyreportService: DailyReportService,
     // private snackBar: MatSnackBar,
@@ -33,7 +36,7 @@ export class DailyreportAddExpensesComponent implements OnInit {
             dailyRaport.expenses.push(this.dailyreport);
           }
           console.log('Aktualizacja obiektu');
-          this.dailyreportService.update(dailyRaport)
+          this.dailyreportService.update({ obj: dailyRaport })
             .subscribe(
               (response) => {
                 console.log('Zaktualizowano')

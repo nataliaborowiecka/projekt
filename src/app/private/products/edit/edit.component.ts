@@ -1,6 +1,8 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from '../products.service';
+import { Product } from '../products';
 
 @Component({
   selector: 'app-edit',
@@ -8,19 +10,20 @@ import { ProductsService } from '../products.service';
   styleUrls: ['./edit.component.scss']
 })
 export class ProductsEditComponent implements OnInit {
-  id = '';
-  product = {
+  product: Product = {
+    id: '',
     name: '',
     stock: 0
   };
   constructor(private acRouter: ActivatedRoute,
               private productsService: ProductsService,
-              private router: Router) {
-    this.id = this.acRouter.snapshot.params.id;
+              private router: Router,
+              private snackBar: MatSnackBar) {
+    this.product.id = this.acRouter.snapshot.params.id;
   }
 
   ngOnInit() {
-    this.productsService.getOneById(this.id)
+    this.productsService.getOneById(this.product.id)
       .subscribe(
         (response: any) => {
           this.product = response;
@@ -29,11 +32,13 @@ export class ProductsEditComponent implements OnInit {
   }
 
   save() {
-    this.productsService.update(this.product, this.id)
+    this.productsService.update(this.product, this.product.id)
       .subscribe(
-        (response: any) => {
-          this.product = response;
-          this.router.navigate['/app/products']
+        (response) => {
+          this.snackBar.open('Poprawnie edytowano', 'Zamknij', {
+            duration: 2000,
+          });
+          this.router.navigate(['/app/products']);
         }
       )
   }

@@ -22,7 +22,9 @@
   <ng-container matColumnDef="usage">
     <th mat-header-cell *matHeaderCellDef>Zużycie produktów</th>
     <td mat-cell *matCellDef="let element"> Farba: {{ element.dyeSum }} <br />
-    Rozjaśniacz: {{ element.bleachSum }}
+    Rozjaśniacz: {{ element.bleachSum }} <br />
+    Woda: {{ element.waterSum }} <br />
+    Olaplex: {{ element.olaplexSum }}
   </td>
   </ng-container>
   <ng-container matColumnDef="action">

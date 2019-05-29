@@ -6,18 +6,22 @@
   <mat-card-content>
     <form>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker1" placeholder="Wybierz date" name="date" [(ngModel)]="usage.date">
+        <input matInput [matDatepicker]="picker1" placeholder="Wybierz date" name="date"
+         [(ngModel)]="usage.date">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field novalidate>
         <mat-label>Pracownicy</mat-label>
-        <mat-select [(ngModel)]="usage.employee" name="employee">
-          <mat-option *ngFor="let employee of employees" [value]="employee">
+        <mat-select required [(ngModel)]="usage.employee" name="employee" #employee="ngModel">
+           <mat-option *ngFor="let employee of employees" [value]="employee" >
             {{employee.name}} {{employee.surname}}
           </mat-option>
-        </mat-select>
-      </mat-form-field>
+          <mat-error *ngIf="employee.errors && (employee.dirty || employee.touched)">
+              Imię jest <strong>wymagane</strong>
+          </mat-error>
+         </mat-select>
+        </mat-form-field>
       <hr>
       <button mat-fab color="primary" (click)="add()">Dodaj</button>
       <div *ngIf="addNewLine">
@@ -27,15 +31,28 @@
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Farba" name="dye" type="number" [(ngModel)]="usageTmp.dye">
         </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Olaplex" name="olaplex" type="number" [(ngModel)]="usageTmp.olaplex">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Woda" name="water" type="number" [(ngModel)]="usageTmp.water">
+            </mat-form-field>
         <button mat-raised-button color="primary" (click)="saveLine()">Dodaj</button>
       </div>
+      <p id=conf *ngIf="confirmed">
+          Poprawnie dodano pracownika
+        </p>
       <div>
 <!--        Tutaj zrob ladna tabelke-->
+
+
 <table>
     <thead>
     <tr>
+      <td>Rozjaśniacz</td>
+      <td>Farba</td>
       <td>Woda</td>
-      <td>Farbat</td>
+      <td>Olaplex</td>
       
     </tr>
     </thead>
@@ -43,6 +60,8 @@
     <tr *ngFor="let u of usage.usages; let i = index">
       <td>{{u.bleach}}</td>
       <td>{{u.dye}}</td>
+      <td>{{u.water}}</td>
+      <td>{{u.olaplex}}</td>
        <td> <button mat-raised-button color="primary" (click)="deleteU(i)">Usuń</button></td>
 
     </tr>
@@ -50,10 +69,16 @@
     <tfoot>
       <tr>
         <td>
-          Suma: {{ sumBleach() }}
+          Suma rozjaśniacz: {{ sumBleach() }}
         </td>
         <td>
-          Suma farby: {{ sumDye() }}
+          Suma farba: {{ sumDye() }}
+        </td>
+        <td>
+          Suma woda: {{ sumWater() }}
+        </td>
+        <td>
+          Suma Olaplex: {{ sumWater() }}
         </td>
       </tr>
     </tfoot>

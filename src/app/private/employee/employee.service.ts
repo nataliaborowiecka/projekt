@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Exmployee} from './exmployee';
+import {Employee} from './employee';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,10 @@ export class EmployeesService {
     return this.httpClient.get('http://localhost:3000/employees');
   }
 
-  add(obj: Exmployee) {
+  add(obj: Employee) {
     return this.httpClient.post('http://localhost:3000/employees', obj);
   }
-  delete(employee: Exmployee) {
+  delete(employee: Employee) {
     return this.httpClient.delete('http://localhost:3000/employees/' + employee.id);
   }
   getOneById(id) {
