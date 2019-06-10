@@ -4,16 +4,15 @@
     <mat-card-title *ngIf="!id">Dodaj zużycie produktów</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <form>
+    <form [formGroup]='usage'>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker1" placeholder="Wybierz date" name="date"
-         [(ngModel)]="usage.date">
+        <input matInput [matDatepicker]="picker1" placeholder="Wybierz date" name="date" formControlName="date">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
       <mat-form-field novalidate>
         <mat-label>Pracownicy</mat-label>
-        <mat-select required [(ngModel)]="usage.employee" name="employee" #employee="ngModel">
+        <mat-select required  name="employee" formControlName="employee">
            <mat-option *ngFor="let employee of employees" [value]="employee" >
             {{employee.name}} {{employee.surname}}
           </mat-option>
@@ -26,16 +25,16 @@
       <button mat-fab color="primary" (click)="add()">Dodaj</button>
       <div *ngIf="addNewLine">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Rozjaśniacz" name="bleach" type="number" [(ngModel)]="usageTmp.bleach">
+          <input matInput placeholder="Rozjaśniacz" name="bleach" type="number" formControlName="bleach">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Farba" name="dye" type="number" [(ngModel)]="usageTmp.dye">
+          <input matInput placeholder="Farba" name="dye" type="number" formControlName="dye">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Olaplex" name="olaplex" type="number" [(ngModel)]="usageTmp.olaplex">
+            <input matInput placeholder="Olaplex" name="olaplex" type="number" formControlName="olaplex">
           </mat-form-field>
           <mat-form-field class="example-full-width">
-              <input matInput placeholder="Woda" name="water" type="number" [(ngModel)]="usageTmp.water">
+              <input matInput placeholder="Woda" name="water" type="number" formControlName="water">
             </mat-form-field>
         <button mat-raised-button color="primary" (click)="saveLine()">Dodaj</button>
       </div>

@@ -7,9 +7,10 @@ import { ProductsService } from '../products/products.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UsageEditComponent } from './edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [UsageAddComponent, UsageListComponent, UsageEditComponent],
-  imports: [CommonModule, MaterialModule, RouterModule, FormsModule],
+  imports: [CommonModule, MaterialModule, RouterModule, FormsModule, ReactiveFormsModule],
   providers: [ProductsService]
 })
 export class UsageModule { }

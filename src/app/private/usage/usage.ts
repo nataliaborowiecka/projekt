@@ -2,7 +2,6 @@ import { Employee } from '../employee/employee';
 
 export interface Usage {
     date: Date;
-    
     employee: Employee;
     usages: UsageTmp[]; 
     bleachSum: number;
