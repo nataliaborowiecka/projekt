@@ -244,6 +244,27 @@
       "waterSum": 3552,
       "olaplexSum": 633,
       "id": 4
+    },
+    {
+      "date": "2019-06-10T13:21:59.404Z",
+      "employee": {},
+      "usages": [
+        {
+          "bleach": 0,
+          "dye": 0,
+          "water": 0,
+          "olaplex": 0
+        },
+        {
+          "bleach": 0,
+          "dye": 0
+        }
+      ],
+      "bleachSum": 0,
+      "dyeSum": 0,
+      "waterSum": null,
+      "olaplexSum": null,
+      "id": 5
     }
   ]
 }

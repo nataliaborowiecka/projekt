@@ -3,27 +3,15 @@ import { UsageService } from './../usage.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {EmployeesService} from "../../employee/employee.service";
+import { UsageTmp, Usage } from '../usage';
 // import { Usage } from '../usage';
 @Component({
   selector: 'app-usage-add',
   templateUrl: '../form/form.component.html'
 })
 export class UsageAddComponent implements OnInit {
-  usage = {
-    date: new Date(),
-    employee: {},
-    usages: [],
-    bleachSum: 0,
-    dyeSum: 0,
-    waterSum: 0,
-    olaplexSum: 0,
-  };
-  usageTmp = {
-    bleach: 0,
-    dye: 0,
-    water: 0,
-    olaplex: 0
-  };
+  usage: Usage;
+  usageTmp: UsageTmp;
   confirmed = false;
   employees = [];
   addNewLine = false;
@@ -33,6 +21,7 @@ export class UsageAddComponent implements OnInit {
     private snackBar: MatSnackBar,
     private employeeService: EmployeesService
   ) {
+    this.usage.date = new Date();
     this.employeeService.getList()
       .subscribe(
         (employeesFromBackend: any) => {
@@ -51,7 +40,9 @@ export class UsageAddComponent implements OnInit {
     this.usage.usages.push(this.usageTmp);
     this.usageTmp = {
       bleach: 0,
-      dye : 0
+      dye: 0,
+      water: 0,
+      olaplex: 0
     };
   }
 
@@ -91,15 +82,19 @@ export class UsageAddComponent implements OnInit {
   }
 
   save() {
-    this.usage.bleachSum = this.sumBleach();
-    this.usage.dyeSum = this.sumDye();
-    this.usage.waterSum = this.sumWater();
-    this.usage.olaplexSum = this.sumOlaplex();
-    this.usageService.add(this.usage).subscribe(response => {
-      this.snackBar.open('Poprawnie dodano', 'Zamknij', {
-        duration: 2000
+    if (this.usage.employee.name.length > 0) {
+      this.usage.bleachSum = this.sumBleach();
+      this.usage.dyeSum = this.sumDye();
+      this.usage.waterSum = this.sumWater();
+      this.usage.olaplexSum = this.sumOlaplex();
+      this.usageService.add(this.usage).subscribe(response => {
+        this.snackBar.open('Poprawnie dodano', 'Zamknij', {
+         duration: 2000
+        });
+         this.router.navigate(['/app/usage']);
       });
-      this.router.navigate(['/app/usage']);
-    });
+    } else {
+      alert('Dodaj pracownika');
+    }
   }
 }
