@@ -2,12 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsageService } from './../usage.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-<<<<<<< HEAD
 import {EmployeesService} from "../../employee/employee.service";
 import { UsageTmp, Usage } from '../usage';
-=======
-import { EmployeesService } from "../../employee/employee.service";
->>>>>>> 26346bfcd93203e101101e88d9720d6b9f1d6052
 // import { Usage } from '../usage';
 @Component({
   selector: 'app-usage-add',
