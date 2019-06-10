@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsageService } from './../usage.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {EmployeesService} from "../../employee/employee.service";
+import { EmployeesService } from "../../employee/employee.service";
 // import { Usage } from '../usage';
 @Component({
   selector: 'app-usage-add',
@@ -41,7 +41,7 @@ export class UsageAddComponent implements OnInit {
       );
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   add() {
     this.addNewLine = true;
@@ -51,7 +51,9 @@ export class UsageAddComponent implements OnInit {
     this.usage.usages.push(this.usageTmp);
     this.usageTmp = {
       bleach: 0,
-      dye : 0
+      dye: 0,
+      water: 0,
+      olaplex: 0
     };
   }
 

@@ -1,13 +1,14 @@
 LOGIN
-<div class="parent" >
+<div class="parent">
   <mat-card id="form" class="child">
     <div class="example-container">
       <mat-form-field>
-        <input matInput placeholder="Login" name="login" [(ngModel)]="user.login" />
+        <input matInput placeholder="Login" name="login" [(ngModel)]="user.login" (keydown.enter)="save()" />
       </mat-form-field>
       <br />
       <mat-form-field>
-        <input matInput placeholder="Hasło" name="password" type="password" [(ngModel)]="user.password" />
+        <input matInput placeholder="Hasło" name="password" type="password" [(ngModel)]="user.password"
+          (keydown.enter)="save()" />
       </mat-form-field>
       <br />
       <p *ngIf="error">Zły login i hasło</p>
