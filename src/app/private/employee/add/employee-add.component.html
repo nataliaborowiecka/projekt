@@ -1,33 +1,21 @@
 <mat-card>
-    <mat-card-header>
+  <mat-card-header>
     <mat-card-title *ngIf="id">Edytuj pracownika</mat-card-title>
-        <mat-card-title *ngIf="!id" >Dodaj pracownika</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-<form #form="ngForm" novalidate>
-  <mat-form-field class="example-full-width">
-    <input matInput  #name="ngModel" type="text" placeholder="Imie" name="name"
-     required [(ngModel)]="employee.name">
-     <mat-error *ngIf="name.errors && (name.dirty || name.touched)">
-      Imię jest <strong>wymagane</strong>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput #surname="ngModel" type="text" placeholder="Nazwisko" name="surname"
-    required [(ngModel)]="employee.surname">
-    <mat-error *ngIf="surname.errors && (surname.dirty || surname.touched)">
-        Nazwisko jest <strong>wymagane</strong>
-      </mat-error>
-  </mat-form-field>
-  <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="save()">Zapisz</button>
-</form>
+    <mat-card-title *ngIf="!id" >Dodaj pracownika</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]='employee' >
+      <mat-form-field class="example-full-width">
+        <input matInput   type="text" placeholder="Imie" name="name" formControlName="name" required >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput  type="text" placeholder="Nazwisko" name="surname" formControlName="surname" required >
+      </mat-form-field>
+      <button [disabled]="!employee.valid" mat-raised-button color="primary" (click)="save()">Zapisz</button>
+    </form>
+  </mat-card-content>
+</mat-card>
 
 
-<p id=conf *ngIf="confirmed">
-  Poprawnie dodano pracownika
-</p>
 
-<!-- form validation:
-  template items, "required", another div with ngIf, template whole form, disable button conditionally
- -->
 
