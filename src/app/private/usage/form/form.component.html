@@ -12,18 +12,15 @@
       </mat-form-field>
       <mat-form-field novalidate>
         <mat-label>Pracownicy</mat-label>
-        <mat-select required  name="employee" formControlName="employee">
-           <mat-option *ngFor="let employee of employees" [value]="employee" >
+        <mat-select required name="employee" formControlName="employee">
+          <mat-option *ngFor="let employee of employees" [value]="employee">
             {{employee.name}} {{employee.surname}}
           </mat-option>
-          <mat-error *ngIf="employee.errors && (employee.dirty || employee.touched)">
-              Imię jest <strong>wymagane</strong>
-          </mat-error>
-         </mat-select>
-        </mat-form-field>
+        </mat-select>
+      </mat-form-field>
       <hr>
       <button mat-fab color="primary" (click)="add()">Dodaj</button>
-      <div *ngIf="addNewLine">
+      <div *ngIf="addNewLine" [formGroup]="usageTmp">
         <mat-form-field class="example-full-width">
           <input matInput placeholder="Rozjaśniacz" name="bleach" type="number" formControlName="bleach">
         </mat-form-field>
@@ -31,63 +28,62 @@
           <input matInput placeholder="Farba" name="dye" type="number" formControlName="dye">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Olaplex" name="olaplex" type="number" formControlName="olaplex">
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-              <input matInput placeholder="Woda" name="water" type="number" formControlName="water">
-            </mat-form-field>
+          <input matInput placeholder="Olaplex" name="olaplex" type="number" formControlName="olaplex">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Woda" name="water" type="number" formControlName="water">
+        </mat-form-field>
         <button mat-raised-button color="primary" (click)="saveLine()">Dodaj</button>
       </div>
       <p id=conf *ngIf="confirmed">
-          Poprawnie dodano pracownika
-        </p>
+        Poprawnie dodano pracownika
+      </p>
       <div>
-<!--        Tutaj zrob ladna tabelke-->
+        <!--        Tutaj zrob ladna tabelke-->
 
 
-<table>
-    <thead>
-    <tr>
-      <td>Rozjaśniacz</td>
-      <td>Farba</td>
-      <td>Woda</td>
-      <td>Olaplex</td>
-      
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let u of usage.usages; let i = index">
-      <td>{{u.bleach}}</td>
-      <td>{{u.dye}}</td>
-      <td>{{u.water}}</td>
-      <td>{{u.olaplex}}</td>
-       <td> <button mat-raised-button color="primary" (click)="deleteU(i)">Usuń</button></td>
+        <table>
+          <thead>
+            <tr>
+              <td>Rozjaśniacz</td>
+              <td>Farba</td>
+              <td>Woda</td>
+              <td>Olaplex</td>
 
-    </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td>
-          Suma rozjaśniacz: {{ sumBleach() }}
-        </td>
-        <td>
-          Suma farba: {{ sumDye() }}
-        </td>
-        <td>
-          Suma woda: {{ sumWater() }}
-        </td>
-        <td>
-          Suma Olaplex: {{ sumWater() }}
-        </td>
-      </tr>
-    </tfoot>
-  </table>
-    
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of usage.value.usages; let i = index">
+              <td>{{u.bleach}}</td>
+              <td>{{u.dye}}</td>
+              <td>{{u.water}}</td>
+              <td>{{u.olaplex}}</td>
+              <td> <button mat-raised-button color="primary" (click)="deleteU(i)">Usuń</button></td>
+
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>
+                Suma rozjaśniacz: {{ sum('bleach') }}
+              </td>
+              <td>
+                Suma farba: {{ sum('dye') }}
+              </td>
+              <td>
+                Suma woda: {{ sum('water') }}
+              </td>
+              <td>
+                Suma Olaplex: {{ sum('olaplex') }}
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+
       </div>
     </form>
   </mat-card-content>
   <mat-card-actions align="start">
-    <button mat-button (click)="save()">Zapisz</button>
+    <button mat-button [disabled]="!usage.valid" (click)="save()">Zapisz</button>
   </mat-card-actions>
 </mat-card>
-
