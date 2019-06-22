@@ -1,6 +1,8 @@
+import { FormControl } from '@angular/forms';
 import { EmployeesService } from '../employee.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSort } from '@angular/material';
 
  
 @Component({
@@ -12,13 +14,13 @@ import { Router } from '@angular/router';
 export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'surname', 'action'];
   dataSource = [];
-
+ idFilter = new FormControl('');
 
 
   constructor(private employeesService: EmployeesService,
     private router:Router,
    ) { }
-
+    
   ngOnInit() {
     this.employeesService.getList().subscribe(
       (employees: any) => {
@@ -34,11 +36,11 @@ export class EmployeeListComponent implements OnInit {
           (response) => {
             this.dataSource = this.dataSource.filter(employee => employee.id !== element.id);
             this.router.navigate(['/app/employee'])
-          
+      
            
 
     } )
   }
     }
-  }
+   }
         

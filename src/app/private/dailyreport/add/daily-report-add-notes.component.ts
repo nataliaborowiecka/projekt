@@ -1,3 +1,5 @@
+import { NotesFormBuilder } from './daily-report-add-form.builder';
+import { FormGroup } from '@angular/forms';
 import { DailyReportService } from '../daily-report.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -9,10 +11,7 @@ import { DailyReportNotes } from '../daily-report';
   templateUrl: './daily-report-add-notes.component.html'
 })
 export class DailyreportAddNotesComponent implements OnInit {
-  dailyreportnotes: DailyReportNotes = {
-    id: '',
-    notes: ''
-  };
+  dailyreportnotes: FormGroup = NotesFormBuilder.build()
   constructor(private dailyreportService: DailyReportService,
     private snackBar: MatSnackBar,
     private router: Router) { }
@@ -24,24 +23,16 @@ export class DailyreportAddNotesComponent implements OnInit {
     this.dailyreportService.getList()
       .subscribe(
         (list: any) => {
-          console.log('Dostales liste', list);
           const dailyRaport = list.filter(obj => obj.date == today)[0];
-          console.log('Twoj daily raport to', dailyRaport);
-          if (dailyRaport.notes) {
-            dailyRaport.notes.push({
-              notes: this.dailyreportnotes.notes
-            });
+          if (dailyRaport) {
+            dailyRaport.push(this.dailyreportnotes.value);
           } else {
-            dailyRaport.notes = [];
-            dailyRaport.notes.push({
-              notes: this.dailyreportnotes.notes
-            });
+            dailyRaport = [];
+            dailyRaport.notes.push(this.dailyreportnotes.value);
           }
-          console.log('Aktualizacja obiektu');
           this.dailyreportService.update({ obj: dailyRaport })
             .subscribe(
               (response) => {
-                console.log('Zaktualizowano')
                 this.router.navigate(['/app/dailyreport'])
               }
             )

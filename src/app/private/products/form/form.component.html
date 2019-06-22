@@ -4,13 +4,13 @@
         <mat-card-title *ngIf="!id">Dodaj produkt</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-     <form>
+     <form [formGroup]="product">
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="Nazwa" name="name" [(ngModel)]="product.name">
+          <input matInput placeholder="Nazwa" name="name" formControlName="name">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="Ilość" name="stock" type="number" [(ngModel)]="product.stock">
-          </mat-form-field>
+            <input matInput placeholder="Ilość" name="stock" type="number" formControlName="stock">
+        </mat-form-field>
      </form>
     </mat-card-content>
     <mat-card-actions align="start">

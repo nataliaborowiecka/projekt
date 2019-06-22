@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmployeeEditComponent } from './edit/edit.component';
+import { MatSortModule } from '@angular/material';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EmployeeEditComponent } from './edit/edit.component';
     HttpClientModule,
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSortModule
 
   ],
   exports: [

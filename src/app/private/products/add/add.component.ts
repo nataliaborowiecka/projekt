@@ -1,3 +1,5 @@
+import { ProductsFormBuilder } from './add-products-form.builder';
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
@@ -10,12 +12,7 @@ import { Product } from '../products';
   styleUrls: ['./add.component.scss']
 })
 export class ProductsAddComponent implements OnInit {
-  product: Product= {
-    id: undefined,
-    name: '',
-    stock: 0
-  };
-
+  product: FormGroup = ProductsFormBuilder.build()
   constructor(private productsService: ProductsService,
     private router: Router,
     private snackBar: MatSnackBar) { }
@@ -24,7 +21,7 @@ export class ProductsAddComponent implements OnInit {
   }
 
   save() {
-    this.productsService.add(this.product)
+    this.productsService.add(this.product.value)
       .subscribe(
         (response) => {
           this.snackBar.open('Poprawnie dodano', 'Zamknij', {

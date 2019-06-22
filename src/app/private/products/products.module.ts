@@ -1,5 +1,5 @@
 import { MaterialModule } from './../../material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsListComponent } from './list/list.component';
@@ -14,7 +14,9 @@ import { ProductsEditComponent } from './edit/edit.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductsService

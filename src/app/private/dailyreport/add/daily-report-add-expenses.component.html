@@ -1,20 +1,18 @@
 <mat-card>
-    <mat-card-header>
+  <mat-card-header>
     <mat-card-title >Dodaj wydatki</mat-card-title>
         
-    </mat-card-header>
+  </mat-card-header>
     <mat-card-content>
-  <form #form="ngForm" novalidate>
-  <mat-form-field class="example-full-width">
-    <input matInput  #expense="ngModel" type="text" placeholder="Wydatek" name="expense"
-      [(ngModel)]="dailyreport.expense">
+      <form [formGroup]="dailyreport">
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" placeholder="Wydatek" name="expense" formControlName="expense">
      
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput #price="ngModel" type="number" placeholder="Cena" name="price"
-     [(ngModel)]="dailyreport.price">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput type="number" placeholder="Cena" name="price" formControlName="price">
    
-  </mat-form-field>
+        </mat-form-field>
   
-  <button [disabled]="form.invalid" mat-raised-button color="primary" (click)="save()">Zapisz</button>
-  </form> 
+          <button [disabled]="!dailyreport.valid" mat-raised-button color="primary" (click)="save()">Zapisz</button>
+        </form> 

@@ -1,3 +1,5 @@
+import { ServiceFormBuilder } from './daily-report-add-form.builder';
+import { FormGroup } from '@angular/forms';
 import { DailyReportService } from './../daily-report.service';
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -9,11 +11,7 @@ import { DailyReportServices } from '../daily-report';
   templateUrl: './daily-report-add-service.component.html'
 })
 export class DailyreportAddServiceComponent implements OnInit {
-dailyreport: DailyReportServices = {
-  id: '',
-  service: '',
-  cost: 0
-};
+dailyreport: FormGroup = ServiceFormBuilder.build()
   constructor(private dailyreportService: DailyReportService,
     private snackBar: MatSnackBar,
     private router: Router) {}
@@ -24,21 +22,17 @@ dailyreport: DailyReportServices = {
     this.dailyreportService.getList()
     .subscribe(
       (list: any) => {
-        console.log('Dostales liste', list);
         const dailyRaport = list.filter(obj => obj.date == today)[0];
-        console.log('Twoj daily raport to', dailyRaport);
-        if (dailyRaport.service) {
-          dailyRaport.service.push(this.dailyreport);
+        if (dailyRaport) {
+          dailyRaport.push(this.dailyreport.value);
 
         } else {
-          dailyRaport.service = [];
-          dailyRaport.service.push(this.dailyreport);
+          dailyRaport = [];
+          dailyRaport.push(this.dailyreport.value);
         }
-        console.log('Aktualizacja obiektu');
         this.dailyreportService.update({ obj: dailyRaport })
           .subscribe(
             (response) => {
-              console.log('Zaktualizowano')
               this.router.navigate(['/app/dailyreport']);
             })});
 

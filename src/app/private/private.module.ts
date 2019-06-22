@@ -10,14 +10,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrivateComponent } from './private.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatSidenavModule } from '@angular/material';
+import { MatSidenavModule, MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [PrivateComponent],
   imports: [CommonModule, MaterialModule, PrivateRoutingModule,
     HttpClientModule,
-    DailyreportModule, EmployeeModule, MonthlyreportModule, ProductsModule, UsageModule, MatSidenavModule],
-  exports: [],
+    DailyreportModule, EmployeeModule, MonthlyreportModule, ProductsModule,
+     UsageModule, MatSidenavModule, MatToolbarModule],
+  exports: [MatToolbarModule],
   providers: [EmployeesService],
 })
 export class PrivateModule { }
