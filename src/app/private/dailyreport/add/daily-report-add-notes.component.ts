@@ -20,22 +20,39 @@ export class DailyreportAddNotesComponent implements OnInit {
 
   save() {
     const today = new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-');
+    console.log('data', today)
     this.dailyreportService.getList()
       .subscribe(
         (list: any) => {
+          console.log('list', list)
           const dailyRaport = list.filter(obj => obj.date == today)[0];
-          if (dailyRaport) {
-            dailyRaport.push(this.dailyreportnotes.value);
+          console.log('dailyreport', dailyRaport)
+          if (dailyRaport === undefined) {
+            this.snackBar.open('Dodaj raport dzienny', 'Zamknij', {
+              duration: 2000,
+            })
           } else {
-            dailyRaport = [];
             dailyRaport.notes.push(this.dailyreportnotes.value);
+            this.dailyreportService.update(dailyRaport)
+              .subscribe(
+                (response) => {
+                  this.router.navigate(['/app/dailyreport'])
+                }
+              )
           }
-          this.dailyreportService.update({ obj: dailyRaport })
-            .subscribe(
-              (response) => {
-                this.router.navigate(['/app/dailyreport'])
-              }
-            )
+
+          // if (dailyRaport) {
+          //   dailyRaport.push(this.dailyreportnotes.value);
+          // } else {
+          //  
+          //   dailyRaport.notes.push(this.dailyreportnotes.value);
+          // }
+          // this.dailyreportService.update({ obj: dailyRaport })
+          //   .subscribe(
+          //     (response) => {
+          //       this.router.navigate(['/app/dailyreport'])
+          //     }
+          //   )
         }
       )
     // console.log('dailyreportnotes', this.dailyreportnotes.notes)

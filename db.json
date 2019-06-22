@@ -163,6 +163,39 @@
           "cost": 100
         }
       ]
+    },
+    {
+      "date": "22-06-2019",
+      "month": 5,
+      "year": 2019,
+      "notes": [
+        {
+          "id": "",
+          "notes": "dscds"
+        },
+        {
+          "id": "",
+          "notes": "cca"
+        }
+      ],
+      "id": 30,
+      "service": [
+        {
+          "id": "",
+          "service": "cdd",
+          "cost": 31321
+        },
+        {
+          "id": "",
+          "service": "gvjvj",
+          "cost": 5788
+        },
+        {
+          "id": "",
+          "service": "hkh",
+          "cost": 321
+        }
+      ]
     }
   ],
   "expense": [

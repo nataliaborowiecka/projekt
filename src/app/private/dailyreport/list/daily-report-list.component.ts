@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 export class DailyreportListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'date', 'notes', 'expenses', 'service', 'action'];
   dataSource = [];
-  constructor(private dailyReport: DailyReportService,
+  constructor(private dailyReportService: DailyReportService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.dailyReport.getList()
+    this.dailyReportService.getList()
       .subscribe(
         (listOfDailyReport: any) => {
           this.dataSource = listOfDailyReport;
@@ -25,10 +25,12 @@ export class DailyreportListComponent implements OnInit {
   addDailyReport() {
     const dailyReport = {
       date: new Date().toISOString().replace(/T.*/, '').split('-').reverse().join('-'),
-      month: new Date().getMonth(), 
-      year: new Date().getFullYear()
+      month: new Date().getMonth(),
+      year: new Date().getFullYear(),
+      notes: [],
+      service: []
     };
-    this.dailyReport.add({ obj: { obj: dailyReport } })
+    this.dailyReportService.add(dailyReport)
       .subscribe(
         (res: any) => {
           this.dataSource = [...this.dataSource, {
@@ -40,7 +42,7 @@ export class DailyreportListComponent implements OnInit {
   }
   delete(element) {
     if (confirm('Czy napewno chcesz usunąć?')) {
-      this.dailyReport.delete(element)
+      this.dailyReportService.delete(element)
         .subscribe(
           (response) => {
             this.dataSource = this.dataSource.filter(dailyreport => dailyreport.id !== element.id);
@@ -48,5 +50,5 @@ export class DailyreportListComponent implements OnInit {
           })
     }
   }
-  
+
 }
