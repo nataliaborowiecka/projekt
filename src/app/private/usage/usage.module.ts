@@ -1,3 +1,4 @@
+import { MatSortModule } from '@angular/material/sort';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsageAddComponent } from './add/add.component';
@@ -10,7 +11,7 @@ import { UsageEditComponent } from './edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [UsageAddComponent, UsageListComponent, UsageEditComponent],
-  imports: [CommonModule, MaterialModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, MaterialModule, RouterModule, FormsModule, ReactiveFormsModule, MatSortModule],
   providers: [ProductsService]
 })
 export class UsageModule { }

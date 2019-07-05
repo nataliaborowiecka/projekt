@@ -1,37 +1,63 @@
 <div class="body">
-
   <mat-sidenav-container class="sidenav">
-
     <mat-sidenav class="menu-list" mode="side" opened>
       <mat-list role="list" class="list">
-        <mat-list-item role="listitem" routerLinkActive="active" aria-label="Button">
+        <mat-list-item
+          role="listitem"
+          class="listitem"
+          routerLinkActive="active"
+          aria-label="Button"
+        >
           <a matLine [routerLink]="['/app/employee']">Pracownicy</a>
+          <mat-icon>person </mat-icon>
         </mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item role="listitem" routerLinkActive="active" aria-label="Button">
+        <mat-list-item
+          role="listitem"
+          class="listitem"
+          routerLinkActive="active"
+          aria-label="Button"
+        >
           <a matLine [routerLink]="['/app/dailyreport']">Raport dzienny</a>
+          <mat-icon>note</mat-icon>
         </mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item role="listitem" routerLinkActive="active" aria-label="Button">
+        <mat-list-item
+          role="listitem"
+          class="listitem"
+          routerLinkActive="active"
+          aria-label="Button"
+        >
           <a matLine [routerLink]="['/app/usage']">Zużycie produktów</a>
+          <mat-icon>add_circle</mat-icon>
         </mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item role="listitem" routerLinkActive="active" aria-label="Button">
+        <mat-list-item
+          role="listitem"
+          class="listitem"
+          routerLinkActive="active"
+          aria-label="Button"
+        >
           <a [routerLink]="['/app/monthlyreport']"> Raport miesieczny </a>
+          <mat-icon>assessment</mat-icon>
         </mat-list-item>
         <mat-divider></mat-divider>
-        <mat-list-item role="listitem" routerLinkActive="active" aria-label="Button">
+        <mat-list-item
+          role="listitem"
+          class="listitem"
+          routerLinkActive="active"
+          aria-label="Button"
+        >
           <a [routerLink]="['/app/products']">Produkty na stanie</a>
-        </mat-list-item>
-        <mat-divider></mat-divider>
-        <mat-list-item role="listitem" aria-label="Button">
-          <a [routerLink]="['/login']">Wyloguj</a>
+          <mat-icon>store </mat-icon>
         </mat-list-item>
       </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <mat-toolbar>
-        <span>toolbar</span>
+      <mat-toolbar class="toolbar">
+        <button class="logout" mat-fab color="" [routerLink]="['/login']" matTooltip="Wyloguj">
+          <mat-icon>account_circle</mat-icon>
+        </button>
       </mat-toolbar>
       <div class="content"></div>
       <router-outlet></router-outlet>

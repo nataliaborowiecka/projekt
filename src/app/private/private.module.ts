@@ -12,14 +12,24 @@ import { PrivateComponent } from './private.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
-  declarations: [PrivateComponent],
-  imports: [CommonModule, MaterialModule, PrivateRoutingModule,
+  declarations: [PrivateComponent, ConfirmDialogComponent],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    PrivateRoutingModule,
     HttpClientModule,
-    DailyreportModule, EmployeeModule, MonthlyreportModule, ProductsModule,
-     UsageModule, MatSidenavModule, MatToolbarModule],
+    DailyreportModule,
+    EmployeeModule,
+    MonthlyreportModule,
+    ProductsModule,
+    UsageModule,
+    MatSidenavModule,
+    MatToolbarModule
+  ],
   exports: [MatToolbarModule],
-  providers: [EmployeesService],
+  providers: [EmployeesService]
 })
-export class PrivateModule { }
+export class PrivateModule {}

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../products.service';
 
 @Component({
@@ -8,27 +10,25 @@ import { ProductsService } from '../products.service';
 })
 export class ProductsListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'stock', 'action'];
-  dataSource = [];
+  dataSource = new MatTableDataSource([]);
 
-  constructor(private productsService: ProductsService) { }
-
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
+  constructor(private productsService: ProductsService) {}
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   ngOnInit() {
-    this.productsService.getList().subscribe(
-      (products: any) => {
-        this.dataSource = products;
-      }
-    );
+    this.dataSource.sort = this.sort;
+    this.productsService.getList().subscribe((products: any) => {
+      this.dataSource.data = products;
+    });
   }
 
   delete(element) {
     if (confirm('Czy napewno chcesz usunąć?')) {
-      this.productsService.delete(element)
-      .subscribe(
-        (response) => {
-          this.dataSource = this.dataSource.filter(product => product.id !== element.id);
-        }
-      );
+      this.productsService.delete(element).subscribe(response => {
+        this.dataSource.data = this.dataSource.data.filter(product => product.id !== element.id);
+      });
     }
   }
-
 }

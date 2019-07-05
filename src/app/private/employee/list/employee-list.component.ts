@@ -4,6 +4,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-list',
   templateUrl: './employee-list.component.html',
@@ -14,7 +16,11 @@ export class EmployeeListComponent implements OnInit {
   dataSource = new MatTableDataSource([]);
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private employeesService: EmployeesService, private router: Router) {}
+  constructor(
+    private employeesService: EmployeesService,
+    private router: Router,
+    public dialog: MatDialog
+  ) {}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

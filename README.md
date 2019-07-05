@@ -1,9 +1,9 @@
 zadania domowe
 1.sortowanie i filtrowanie
-2.toolbar user log out
-3.usuwanie czerwone, edycja niebieskie
+2.toolbar user log out           +
+3.usuwanie czerwone, edycja niebieskie +
 4.potwierdzenie dialog usuwanie
-5.menu mniejsza czcionka i ikony
+5.menu mniejsza czcionka i ikony +
 
 ZMIENIONE ID DO OBIEKTU (PRODUCTS)
 

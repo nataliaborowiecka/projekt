@@ -6,3 +6,9 @@ position: fixed;
 right: 5%;
 top: 5%;
 }
+.delete {
+  color: rgb(190, 47, 47);
+}
+.edit {
+  color: rgb(54, 54, 173);
+}
