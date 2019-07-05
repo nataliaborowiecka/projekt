@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-
+import { MatMenuModule } from '@angular/material/menu';
 @NgModule({
   declarations: [PrivateComponent, ConfirmDialogComponent],
   imports: [
@@ -27,7 +27,8 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     ProductsModule,
     UsageModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule
   ],
   exports: [MatToolbarModule],
   providers: [EmployeesService]

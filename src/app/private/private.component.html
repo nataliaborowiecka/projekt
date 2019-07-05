@@ -55,9 +55,17 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar class="toolbar">
-        <button class="logout" mat-fab color="" [routerLink]="['/login']" matTooltip="Wyloguj">
-          <mat-icon>account_circle</mat-icon>
+        <button mat-button class="menu "[matMenuTriggerFor]="menu">
+          Natalia Borowiecka
+          <mat-icon>person</mat-icon>
         </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['/login']">Wyloguj</button>
+          <button mat-menu-item>Zmień hasło</button>
+        </mat-menu>
+        <!-- <button class="logout" mat-fab color="" [routerLink]="['/login']" matTooltip="Wyloguj">
+          <mat-icon>account_circle</mat-icon>
+        </button> -->
       </mat-toolbar>
       <div class="content"></div>
       <router-outlet></router-outlet>
