@@ -1,15 +1,10 @@
-zadania domowe
-1.sortowanie i filtrowanie
-2.toolbar user log out           +
-3.usuwanie czerwone, edycja niebieskie +
-4.potwierdzenie dialog usuwanie
-5.menu mniejsza czcionka i ikony +
 
-ZMIENIONE ID DO OBIEKTU (PRODUCTS)
+1.EDYCJA +
+2.FORMS
+3.USUNAC SPEC.TS
+4.MENU, IMIE, ZMIEN HASLO, WYLOGUJ
 
-1. Moduły
-2. Componenty // mała funkcjonalnosc
-3. Serwis
+
 
 /// Fryzjer
 

@@ -28,7 +28,7 @@ export class DailyreportEditComponent implements OnInit {
     'notes',
     'action'
   ]
-  
+
   constructor(private DailyreportService: DailyReportService,
     private AcRouter: ActivatedRoute,
     private mattable: MatTableModule) { }
